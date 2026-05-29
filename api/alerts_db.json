@@ -1,0 +1,2130 @@
+[
+  {
+    "id": "alert_d2d307ab",
+    "timestamp": "2026-05-23T15:45:39.716694",
+    "sender": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+    "recipient": "cfo@enterprise.com",
+    "recipient_group": "Executive",
+    "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=softfail dkim=none dmarc=none\nFrom: \"Microsoft Office 365 Support\" <no-reply@security-office365-updates.com>\nTo: <cfo@enterprise.com>\nSubject: ACTION REQUIRED: Unusual Sign-in Detected for Security Alert\nDate: Sat, 23 May 2026 15:20:00 +0000\n\nYour Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+      "from": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+      "from_display_name": "Microsoft Office 365 Support",
+      "from_email": "no-reply@security-office365-updates.com",
+      "to": "cfo@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Sat, 23 May 2026 15:20:00 +0000",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "softfail",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Your Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+      "urls": [
+        "http://microsoft.com-update.security-checkpoint.xyz/login.php"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.706,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.791,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.8333333333333334
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 0.4,
+      "average_score": 0.4,
+      "details": [
+        {
+          "url": "http://microsoft.com-update.security-checkpoint.xyz/login.php",
+          "domain": "security-checkpoint.xyz",
+          "score": 0.4,
+          "indicators": [
+            "redirect_shortener_used"
+          ],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Authentication Fail": 0.12,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Display Name Impersonation": 0.25,
+        "Semantic Body Threat Cues": 0.353,
+        "Embedded Links Risk Score": 0.18
+      },
+      "explanations": [
+        "SPF record verification returned softfail",
+        "Sender name 'Microsoft Office 365 Support' mimics authority but uses external domain 'security-office365-updates.com'",
+        "Body semantics contain credential harvesting request indicators"
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
+    "id": "alert_38eadf7e",
+    "timestamp": "2026-05-23T15:28:55.320959",
+    "sender": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+    "recipient": "cfo@enterprise.com",
+    "recipient_group": "Executive",
+    "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=softfail dkim=none dmarc=none\nFrom: \"Microsoft Office 365 Support\" <no-reply@security-office365-updates.com>\nTo: <cfo@enterprise.com>\nSubject: ACTION REQUIRED: Unusual Sign-in Detected for Security Alert\nDate: Sat, 23 May 2026 15:20:00 +0000\n\nYour Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+      "from": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+      "from_display_name": "Microsoft Office 365 Support",
+      "from_email": "no-reply@security-office365-updates.com",
+      "to": "cfo@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Sat, 23 May 2026 15:20:00 +0000",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "softfail",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Your Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+      "urls": [
+        "http://microsoft.com-update.security-checkpoint.xyz/login.php"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.706,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.791,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.8333333333333334
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 0.4,
+      "average_score": 0.4,
+      "details": [
+        {
+          "url": "http://microsoft.com-update.security-checkpoint.xyz/login.php",
+          "domain": "security-checkpoint.xyz",
+          "score": 0.4,
+          "indicators": [
+            "redirect_shortener_used"
+          ],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Authentication Fail": 0.12,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Display Name Impersonation": 0.25,
+        "Semantic Body Threat Cues": 0.353,
+        "Embedded Links Risk Score": 0.18
+      },
+      "explanations": [
+        "SPF record verification returned softfail",
+        "Sender name 'Microsoft Office 365 Support' mimics authority but uses external domain 'security-office365-updates.com'",
+        "Body semantics contain credential harvesting request indicators"
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
+    "id": "alert_1013",
+    "timestamp": "2026-05-23T02:27:34.952457",
+    "sender": "\"Robert Davis (CEO)\" <ceo.robert.davis@gmail.com>",
+    "recipient": "payroll.officer@enterprise.com",
+    "recipient_group": "Finance",
+    "subject": "URGENT: Quick Task",
+    "verdict": "phishing",
+    "threat_category": "bec",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=none dmarc=fail\nReceived: from mail-sourcer.gmail.com (192.0.2.45)\nReply-To: executive.office.remotedesk@office-admin-desk.com\nFrom: \"Robert Davis (CEO)\" <ceo.robert.davis@gmail.com>\nTo: <payroll.officer@enterprise.com>\nSubject: URGENT: Quick Task\nDate: Sat, 23 May 2026 02:27:34 +0000\nMessage-ID: <930453.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nAre you at your desk?\n\nI'm currently tied up in an board meeting and need you to handle an urgent request immediately. I need you to purchase 10 Apple gift cards worth $100 each for a client reimbursement. Please send me the clear photos of the codes on the back of the cards as soon as you get them.\n\nDo not call me, as I cannot talk right now. Please confirm receipt.\n\nThanks,\nRobert Davis\nChief Executive Officer",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "URGENT: Quick Task",
+      "from": "\"Robert Davis (CEO)\" <ceo.robert.davis@gmail.com>",
+      "from_display_name": "Robert Davis (CEO)",
+      "from_email": "ceo.robert.davis@gmail.com",
+      "to": "payroll.officer@enterprise.com",
+      "reply_to": "executive.office.remotedesk@office-admin-desk.com",
+      "reply_to_mismatch": true,
+      "date": "Sat, 23 May 2026 02:27:34 +0000",
+      "message_id": "<930453.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "pass",
+      "dkim_status": "none",
+      "dmarc_status": "fail",
+      "body_text": "Are you at your desk?\n\nI'm currently tied up in an board meeting and need you to handle an urgent request immediately. I need you to purchase 10 Apple gift cards worth $100 each for a client reimbursement. Please send me the clear photos of the codes on the back of the cards as soon as you get them.\n\nDo not call me, as I cannot talk right now. Please confirm receipt.\n\nThanks,\nRobert Davis\nChief Executive Officer",
+      "urls": [],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.637,
+      "intent": "bec",
+      "categories": {
+        "credential_harvesting": 0.479,
+        "bec": 0.744,
+        "generic_phishing": 0.454
+      },
+      "linguistic_signals": [
+        {
+          "signal": "bec_financial_intent",
+          "weight": 0.5
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": []
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "bec",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Fail": 0.35,
+        "Reply-To Domain Mismatch": 0.3,
+        "Semantic Body Threat Cues": 0.319
+      },
+      "explanations": [
+        "DMARC alignment checks failed (spoofing indicator)",
+        "Reply-to field does not match the sender domain (ceo.robert.davis@gmail.com)",
+        "Linguistic patterns match executive financial manipulation / BEC template"
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": "camp_bec_wire_01"
+  },
+  {
+    "id": "alert_1011",
+    "timestamp": "2026-05-23T01:27:34.952457",
+    "sender": "\"HR Department\" <hr@enterprise.com>",
+    "recipient": "all-hands@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Quarterly Benefits Update & Open Enrollment",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nFrom: \"HR Department\" <hr@enterprise.com>\nTo: <all-hands@enterprise.com>\nSubject: Quarterly Benefits Update & Open Enrollment\nDate: Sat, 23 May 2026 01:27:34 +0000\nMessage-ID: <540907.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: multipart/mixed; boundary=\"----=_Part_Boundary_PDS\"\n\n------=_Part_Boundary_PDS\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office\n------=_Part_Boundary_PDS\nContent-Type: application/pdf; name=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Disposition: attachment; filename=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Transfer-Encoding: base64\n\nJVBERi0xLjQKJcfsj6IKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIK\n------=_Part_Boundary_PDS--",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Quarterly Benefits Update & Open Enrollment",
+      "from": "HR Department <hr@enterprise.com>",
+      "from_display_name": "HR Department",
+      "from_email": "hr@enterprise.com",
+      "to": "all-hands@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Sat, 23 May 2026 01:27:34 +0000",
+      "message_id": "<540907.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office",
+      "urls": [
+        "http://hr-portal.enterprise.com/benefits/2026"
+      ],
+      "attachments": [
+        {
+          "filename": "Benefits_Enrollment_Guide_2026.pdf",
+          "content_type": "application/pdf",
+          "size_bytes": 54,
+          "is_high_risk": false,
+          "has_macros": false
+        }
+      ]
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://hr-portal.enterprise.com/benefits/2026",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1022",
+    "timestamp": "2026-05-22T19:27:34.952457",
+    "sender": "\"Sarah Jenkins\" <sjenkins@enterprise.com>",
+    "recipient": "marketing-team@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Q3 Marketing Strategy Sync",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nReceived: from internal-switch.enterprise.com (10.0.1.5)\nFrom: \"Sarah Jenkins\" <sjenkins@enterprise.com>\nTo: <marketing-team@enterprise.com>\nSubject: Q3 Marketing Strategy Sync\nDate: Fri, 22 May 2026 19:27:34 +0000\nMessage-ID: <398217.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHi team,\n\nI've updated the slide deck for our Q3 planning session. Can everyone review slide 5 and add their updates before tomorrow morning?\n\nHere is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Q3 Marketing Strategy Sync",
+      "from": "Sarah Jenkins <sjenkins@enterprise.com>",
+      "from_display_name": "Sarah Jenkins",
+      "from_email": "sjenkins@enterprise.com",
+      "to": "marketing-team@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Fri, 22 May 2026 19:27:34 +0000",
+      "message_id": "<398217.alert-pds@enterprise.com>",
+      "hop_count": 2,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hi team,\n\nI've updated the slide deck for our Q3 planning session. Can everyone review slide 5 and add their updates before tomorrow morning?\n\nHere is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+      "urls": [
+        "http://internal.enterprise.com/marketing/q3-sync"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://internal.enterprise.com/marketing/q3-sync",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1002",
+    "timestamp": "2026-05-22T17:27:34.952457",
+    "sender": "\"DHL Express Delivery\" <dhl-tracking@deliverysupport-hub.net>",
+    "recipient": "developer@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Your package delivery requires immediate action",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.39,
+    "raw_email": "Authentication-Results: mx.google.com; spf=neutral dkim=none dmarc=none\nReceived: from anonymous-node.ru (185.190.140.23)\nFrom: \"DHL Express Delivery\" <dhl-tracking@deliverysupport-hub.net>\nTo: <developer@enterprise.com>\nSubject: Your package delivery requires immediate action\nDate: Fri, 22 May 2026 17:27:34 +0000\nMessage-ID: <986407.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nDear Customer,\n\nWe were unable to deliver your DHL package today due to incorrect address information. A small customs clearance fee of $1.50 is outstanding.\n\nTo schedule a redelivery, please update your billing address and complete payment using the link below within the next 48 hours.\n\nUpdate shipping details here: http://dhl-tracking-portal.net-billing-verify.ru/dhl/track\n\nDHL Express Services Ltd.",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Your package delivery requires immediate action",
+      "from": "DHL Express Delivery <dhl-tracking@deliverysupport-hub.net>",
+      "from_display_name": "DHL Express Delivery",
+      "from_email": "dhl-tracking@deliverysupport-hub.net",
+      "to": "developer@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Fri, 22 May 2026 17:27:34 +0000",
+      "message_id": "<986407.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "neutral",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Dear Customer,\n\nWe were unable to deliver your DHL package today due to incorrect address information. A small customs clearance fee of $1.50 is outstanding.\n\nTo schedule a redelivery, please update your billing address and complete payment using the link below within the next 48 hours.\n\nUpdate shipping details here: http://dhl-tracking-portal.net-billing-verify.ru/dhl/track\n\nDHL Express Services Ltd.",
+      "urls": [
+        "http://dhl-tracking-portal.net-billing-verify.ru/dhl/track"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.2,
+      "average_score": 0.2,
+      "details": [
+        {
+          "url": "http://dhl-tracking-portal.net-billing-verify.ru/dhl/track",
+          "domain": "net-billing-verify.ru",
+          "score": 0.2,
+          "indicators": [
+            "hyphenated_domain"
+          ],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.39,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Embedded Links Risk Score": 0.09
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1006",
+    "timestamp": "2026-05-22T08:27:34.952457",
+    "sender": "\"HR Department\" <hr@enterprise.com>",
+    "recipient": "all-hands@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Quarterly Benefits Update & Open Enrollment",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nFrom: \"HR Department\" <hr@enterprise.com>\nTo: <all-hands@enterprise.com>\nSubject: Quarterly Benefits Update & Open Enrollment\nDate: Fri, 22 May 2026 08:27:34 +0000\nMessage-ID: <353565.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: multipart/mixed; boundary=\"----=_Part_Boundary_PDS\"\n\n------=_Part_Boundary_PDS\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office\n------=_Part_Boundary_PDS\nContent-Type: application/pdf; name=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Disposition: attachment; filename=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Transfer-Encoding: base64\n\nJVBERi0xLjQKJcfsj6IKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIK\n------=_Part_Boundary_PDS--",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Quarterly Benefits Update & Open Enrollment",
+      "from": "HR Department <hr@enterprise.com>",
+      "from_display_name": "HR Department",
+      "from_email": "hr@enterprise.com",
+      "to": "all-hands@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Fri, 22 May 2026 08:27:34 +0000",
+      "message_id": "<353565.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office",
+      "urls": [
+        "http://hr-portal.enterprise.com/benefits/2026"
+      ],
+      "attachments": [
+        {
+          "filename": "Benefits_Enrollment_Guide_2026.pdf",
+          "content_type": "application/pdf",
+          "size_bytes": 54,
+          "is_high_risk": false,
+          "has_macros": false
+        }
+      ]
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://hr-portal.enterprise.com/benefits/2026",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1023",
+    "timestamp": "2026-05-22T07:27:34.952457",
+    "sender": "\"Sarah Jenkins\" <sjenkins@enterprise.com>",
+    "recipient": "marketing-team@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Q3 Marketing Strategy Sync",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nReceived: from internal-switch.enterprise.com (10.0.1.5)\nFrom: \"Sarah Jenkins\" <sjenkins@enterprise.com>\nTo: <marketing-team@enterprise.com>\nSubject: Q3 Marketing Strategy Sync\nDate: Fri, 22 May 2026 07:27:34 +0000\nMessage-ID: <165862.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHi team,\n\nI've updated the slide deck for our Q3 planning session. Can everyone review slide 5 and add their updates before tomorrow morning?\n\nHere is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Q3 Marketing Strategy Sync",
+      "from": "Sarah Jenkins <sjenkins@enterprise.com>",
+      "from_display_name": "Sarah Jenkins",
+      "from_email": "sjenkins@enterprise.com",
+      "to": "marketing-team@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Fri, 22 May 2026 07:27:34 +0000",
+      "message_id": "<165862.alert-pds@enterprise.com>",
+      "hop_count": 2,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hi team,\n\nI've updated the slide deck for our Q3 planning session. Can everyone review slide 5 and add their updates before tomorrow morning?\n\nHere is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+      "urls": [
+        "http://internal.enterprise.com/marketing/q3-sync"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://internal.enterprise.com/marketing/q3-sync",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1004",
+    "timestamp": "2026-05-22T03:27:34.952457",
+    "sender": "\"Sarah Jenkins\" <sjenkins@enterprise.com>",
+    "recipient": "marketing-team@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Q3 Marketing Strategy Sync",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nReceived: from internal-switch.enterprise.com (10.0.1.5)\nFrom: \"Sarah Jenkins\" <sjenkins@enterprise.com>\nTo: <marketing-team@enterprise.com>\nSubject: Q3 Marketing Strategy Sync\nDate: Fri, 22 May 2026 03:27:34 +0000\nMessage-ID: <667722.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHi team,\n\nI've updated the slide deck for our Q3 planning session. Can everyone review slide 5 and add their updates before tomorrow morning?\n\nHere is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Q3 Marketing Strategy Sync",
+      "from": "Sarah Jenkins <sjenkins@enterprise.com>",
+      "from_display_name": "Sarah Jenkins",
+      "from_email": "sjenkins@enterprise.com",
+      "to": "marketing-team@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Fri, 22 May 2026 03:27:34 +0000",
+      "message_id": "<667722.alert-pds@enterprise.com>",
+      "hop_count": 2,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hi team,\n\nI've updated the slide deck for our Q3 planning session. Can everyone review slide 5 and add their updates before tomorrow morning?\n\nHere is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+      "urls": [
+        "http://internal.enterprise.com/marketing/q3-sync"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://internal.enterprise.com/marketing/q3-sync",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1010",
+    "timestamp": "2026-05-22T01:27:34.952457",
+    "sender": "\"DHL Express Delivery\" <dhl-tracking@deliverysupport-hub.net>",
+    "recipient": "developer@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Your package delivery requires immediate action",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.39,
+    "raw_email": "Authentication-Results: mx.google.com; spf=neutral dkim=none dmarc=none\nReceived: from anonymous-node.ru (185.190.140.23)\nFrom: \"DHL Express Delivery\" <dhl-tracking@deliverysupport-hub.net>\nTo: <developer@enterprise.com>\nSubject: Your package delivery requires immediate action\nDate: Fri, 22 May 2026 01:27:34 +0000\nMessage-ID: <524124.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nDear Customer,\n\nWe were unable to deliver your DHL package today due to incorrect address information. A small customs clearance fee of $1.50 is outstanding.\n\nTo schedule a redelivery, please update your billing address and complete payment using the link below within the next 48 hours.\n\nUpdate shipping details here: http://dhl-tracking-portal.net-billing-verify.ru/dhl/track\n\nDHL Express Services Ltd.",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Your package delivery requires immediate action",
+      "from": "DHL Express Delivery <dhl-tracking@deliverysupport-hub.net>",
+      "from_display_name": "DHL Express Delivery",
+      "from_email": "dhl-tracking@deliverysupport-hub.net",
+      "to": "developer@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Fri, 22 May 2026 01:27:34 +0000",
+      "message_id": "<524124.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "neutral",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Dear Customer,\n\nWe were unable to deliver your DHL package today due to incorrect address information. A small customs clearance fee of $1.50 is outstanding.\n\nTo schedule a redelivery, please update your billing address and complete payment using the link below within the next 48 hours.\n\nUpdate shipping details here: http://dhl-tracking-portal.net-billing-verify.ru/dhl/track\n\nDHL Express Services Ltd.",
+      "urls": [
+        "http://dhl-tracking-portal.net-billing-verify.ru/dhl/track"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.2,
+      "average_score": 0.2,
+      "details": [
+        {
+          "url": "http://dhl-tracking-portal.net-billing-verify.ru/dhl/track",
+          "domain": "net-billing-verify.ru",
+          "score": 0.2,
+          "indicators": [
+            "hyphenated_domain"
+          ],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.39,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Embedded Links Risk Score": 0.09
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1016",
+    "timestamp": "2026-05-22T00:27:34.952457",
+    "sender": "\"DHL Express Delivery\" <dhl-tracking@deliverysupport-hub.net>",
+    "recipient": "developer@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Your package delivery requires immediate action",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.39,
+    "raw_email": "Authentication-Results: mx.google.com; spf=neutral dkim=none dmarc=none\nReceived: from anonymous-node.ru (185.190.140.23)\nFrom: \"DHL Express Delivery\" <dhl-tracking@deliverysupport-hub.net>\nTo: <developer@enterprise.com>\nSubject: Your package delivery requires immediate action\nDate: Fri, 22 May 2026 00:27:34 +0000\nMessage-ID: <953715.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nDear Customer,\n\nWe were unable to deliver your DHL package today due to incorrect address information. A small customs clearance fee of $1.50 is outstanding.\n\nTo schedule a redelivery, please update your billing address and complete payment using the link below within the next 48 hours.\n\nUpdate shipping details here: http://dhl-tracking-portal.net-billing-verify.ru/dhl/track\n\nDHL Express Services Ltd.",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Your package delivery requires immediate action",
+      "from": "DHL Express Delivery <dhl-tracking@deliverysupport-hub.net>",
+      "from_display_name": "DHL Express Delivery",
+      "from_email": "dhl-tracking@deliverysupport-hub.net",
+      "to": "developer@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Fri, 22 May 2026 00:27:34 +0000",
+      "message_id": "<953715.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "neutral",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Dear Customer,\n\nWe were unable to deliver your DHL package today due to incorrect address information. A small customs clearance fee of $1.50 is outstanding.\n\nTo schedule a redelivery, please update your billing address and complete payment using the link below within the next 48 hours.\n\nUpdate shipping details here: http://dhl-tracking-portal.net-billing-verify.ru/dhl/track\n\nDHL Express Services Ltd.",
+      "urls": [
+        "http://dhl-tracking-portal.net-billing-verify.ru/dhl/track"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.2,
+      "average_score": 0.2,
+      "details": [
+        {
+          "url": "http://dhl-tracking-portal.net-billing-verify.ru/dhl/track",
+          "domain": "net-billing-verify.ru",
+          "score": 0.2,
+          "indicators": [
+            "hyphenated_domain"
+          ],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.39,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Embedded Links Risk Score": 0.09
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "overridden_phishing",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1007",
+    "timestamp": "2026-05-21T12:27:34.952457",
+    "sender": "\"HR Department\" <hr@enterprise.com>",
+    "recipient": "all-hands@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Quarterly Benefits Update & Open Enrollment",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nFrom: \"HR Department\" <hr@enterprise.com>\nTo: <all-hands@enterprise.com>\nSubject: Quarterly Benefits Update & Open Enrollment\nDate: Thu, 21 May 2026 12:27:34 +0000\nMessage-ID: <839688.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: multipart/mixed; boundary=\"----=_Part_Boundary_PDS\"\n\n------=_Part_Boundary_PDS\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office\n------=_Part_Boundary_PDS\nContent-Type: application/pdf; name=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Disposition: attachment; filename=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Transfer-Encoding: base64\n\nJVBERi0xLjQKJcfsj6IKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIK\n------=_Part_Boundary_PDS--",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Quarterly Benefits Update & Open Enrollment",
+      "from": "HR Department <hr@enterprise.com>",
+      "from_display_name": "HR Department",
+      "from_email": "hr@enterprise.com",
+      "to": "all-hands@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Thu, 21 May 2026 12:27:34 +0000",
+      "message_id": "<839688.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office",
+      "urls": [
+        "http://hr-portal.enterprise.com/benefits/2026"
+      ],
+      "attachments": [
+        {
+          "filename": "Benefits_Enrollment_Guide_2026.pdf",
+          "content_type": "application/pdf",
+          "size_bytes": 54,
+          "is_high_risk": false,
+          "has_macros": false
+        }
+      ]
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://hr-portal.enterprise.com/benefits/2026",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1019",
+    "timestamp": "2026-05-21T05:27:34.952457",
+    "sender": "\"HR Department\" <hr@enterprise.com>",
+    "recipient": "all-hands@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Quarterly Benefits Update & Open Enrollment",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nFrom: \"HR Department\" <hr@enterprise.com>\nTo: <all-hands@enterprise.com>\nSubject: Quarterly Benefits Update & Open Enrollment\nDate: Thu, 21 May 2026 05:27:34 +0000\nMessage-ID: <383057.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: multipart/mixed; boundary=\"----=_Part_Boundary_PDS\"\n\n------=_Part_Boundary_PDS\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office\n------=_Part_Boundary_PDS\nContent-Type: application/pdf; name=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Disposition: attachment; filename=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Transfer-Encoding: base64\n\nJVBERi0xLjQKJcfsj6IKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIK\n------=_Part_Boundary_PDS--",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Quarterly Benefits Update & Open Enrollment",
+      "from": "HR Department <hr@enterprise.com>",
+      "from_display_name": "HR Department",
+      "from_email": "hr@enterprise.com",
+      "to": "all-hands@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Thu, 21 May 2026 05:27:34 +0000",
+      "message_id": "<383057.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office",
+      "urls": [
+        "http://hr-portal.enterprise.com/benefits/2026"
+      ],
+      "attachments": [
+        {
+          "filename": "Benefits_Enrollment_Guide_2026.pdf",
+          "content_type": "application/pdf",
+          "size_bytes": 54,
+          "is_high_risk": false,
+          "has_macros": false
+        }
+      ]
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://hr-portal.enterprise.com/benefits/2026",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1005",
+    "timestamp": "2026-05-20T23:27:34.952457",
+    "sender": "\"Robert Davis (CEO)\" <ceo.robert.davis@gmail.com>",
+    "recipient": "payroll.officer@enterprise.com",
+    "recipient_group": "Finance",
+    "subject": "URGENT: Quick Task",
+    "verdict": "phishing",
+    "threat_category": "bec",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=none dmarc=fail\nReceived: from mail-sourcer.gmail.com (192.0.2.45)\nReply-To: executive.office.remotedesk@office-admin-desk.com\nFrom: \"Robert Davis (CEO)\" <ceo.robert.davis@gmail.com>\nTo: <payroll.officer@enterprise.com>\nSubject: URGENT: Quick Task\nDate: Wed, 20 May 2026 23:27:34 +0000\nMessage-ID: <133663.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nAre you at your desk?\n\nI'm currently tied up in an board meeting and need you to handle an urgent request immediately. I need you to purchase 10 Apple gift cards worth $100 each for a client reimbursement. Please send me the clear photos of the codes on the back of the cards as soon as you get them.\n\nDo not call me, as I cannot talk right now. Please confirm receipt.\n\nThanks,\nRobert Davis\nChief Executive Officer",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "URGENT: Quick Task",
+      "from": "\"Robert Davis (CEO)\" <ceo.robert.davis@gmail.com>",
+      "from_display_name": "Robert Davis (CEO)",
+      "from_email": "ceo.robert.davis@gmail.com",
+      "to": "payroll.officer@enterprise.com",
+      "reply_to": "executive.office.remotedesk@office-admin-desk.com",
+      "reply_to_mismatch": true,
+      "date": "Wed, 20 May 2026 23:27:34 +0000",
+      "message_id": "<133663.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "pass",
+      "dkim_status": "none",
+      "dmarc_status": "fail",
+      "body_text": "Are you at your desk?\n\nI'm currently tied up in an board meeting and need you to handle an urgent request immediately. I need you to purchase 10 Apple gift cards worth $100 each for a client reimbursement. Please send me the clear photos of the codes on the back of the cards as soon as you get them.\n\nDo not call me, as I cannot talk right now. Please confirm receipt.\n\nThanks,\nRobert Davis\nChief Executive Officer",
+      "urls": [],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.637,
+      "intent": "bec",
+      "categories": {
+        "credential_harvesting": 0.479,
+        "bec": 0.744,
+        "generic_phishing": 0.454
+      },
+      "linguistic_signals": [
+        {
+          "signal": "bec_financial_intent",
+          "weight": 0.5
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": []
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "bec",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Fail": 0.35,
+        "Reply-To Domain Mismatch": 0.3,
+        "Semantic Body Threat Cues": 0.319
+      },
+      "explanations": [
+        "DMARC alignment checks failed (spoofing indicator)",
+        "Reply-to field does not match the sender domain (ceo.robert.davis@gmail.com)",
+        "Linguistic patterns match executive financial manipulation / BEC template"
+      ]
+    },
+    "analyst_action": "confirmed",
+    "analyst_notes": "Confirmed phishing threat vector.",
+    "campaign_id": "camp_bec_wire_01"
+  },
+  {
+    "id": "alert_1014",
+    "timestamp": "2026-05-20T23:27:34.952457",
+    "sender": "\"Microsoft Office 365 Security Team\" <no-reply@security-office365-updates.com>",
+    "recipient": "cfo@enterprise.com",
+    "recipient_group": "Executive",
+    "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=softfail dkim=none dmarc=none\nReceived: from rogue-relay.unknownhost.net (198.51.100.220)\nFrom: \"Microsoft Office 365 Security Team\" <no-reply@security-office365-updates.com>\nTo: <cfo@enterprise.com>\nSubject: ACTION REQUIRED: Unusual Sign-in Detected for Security Alert\nDate: Wed, 20 May 2026 23:27:34 +0000\nMessage-ID: <287769.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nMicrosoft Office 365\n\nYour account has experienced an unusual sign-in attempt from a new location.\n\nLocation: Moscow, Russia\nIP Address: 82.102.23.109\n\nTo prevent permanent deletion of your account and suspension of your corporate email services, you must verify your identity immediately. Failure to verify within 24 hours will result in complete lockout of your workspace.\n\nVerify your identity here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nThank you,\nMicrosoft Security Team",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+      "from": "Microsoft Office 365 Security Team <no-reply@security-office365-updates.com>",
+      "from_display_name": "Microsoft Office 365 Security Team",
+      "from_email": "no-reply@security-office365-updates.com",
+      "to": "cfo@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Wed, 20 May 2026 23:27:34 +0000",
+      "message_id": "<287769.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "softfail",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Microsoft Office 365\n\nYour account has experienced an unusual sign-in attempt from a new location.\n\nLocation: Moscow, Russia\nIP Address: 82.102.23.109\n\nTo prevent permanent deletion of your account and suspension of your corporate email services, you must verify your identity immediately. Failure to verify within 24 hours will result in complete lockout of your workspace.\n\nVerify your identity here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nThank you,\nMicrosoft Security Team",
+      "urls": [
+        "http://microsoft.com-update.security-checkpoint.xyz/login.php"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.788,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.872,
+        "bec": 0.646,
+        "generic_phishing": 0.504
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.8333333333333334
+        },
+        {
+          "signal": "urgency_coercion_cues",
+          "weight": 0.7
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 0.4,
+      "average_score": 0.4,
+      "details": [
+        {
+          "url": "http://microsoft.com-update.security-checkpoint.xyz/login.php",
+          "domain": "security-checkpoint.xyz",
+          "score": 0.4,
+          "indicators": [
+            "redirect_shortener_used"
+          ],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Authentication Fail": 0.12,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Display Name Impersonation": 0.25,
+        "Semantic Body Threat Cues": 0.394,
+        "Embedded Links Risk Score": 0.18
+      },
+      "explanations": [
+        "SPF record verification returned softfail",
+        "Sender name 'Microsoft Office 365 Security Team' mimics authority but uses external domain 'security-office365-updates.com'",
+        "Body semantics contain credential harvesting request indicators"
+      ]
+    },
+    "analyst_action": "confirmed",
+    "analyst_notes": "Confirmed phishing threat vector.",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
+    "id": "alert_1021",
+    "timestamp": "2026-05-20T19:27:34.952457",
+    "sender": "\"Sarah Jenkins\" <sjenkins@enterprise.com>",
+    "recipient": "marketing-team@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Q3 Marketing Strategy Sync",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nReceived: from internal-switch.enterprise.com (10.0.1.5)\nFrom: \"Sarah Jenkins\" <sjenkins@enterprise.com>\nTo: <marketing-team@enterprise.com>\nSubject: Q3 Marketing Strategy Sync\nDate: Wed, 20 May 2026 19:27:34 +0000\nMessage-ID: <365502.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHi team,\n\nI've updated the slide deck for our Q3 planning session. Can everyone review slide 5 and add their updates before tomorrow morning?\n\nHere is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Q3 Marketing Strategy Sync",
+      "from": "Sarah Jenkins <sjenkins@enterprise.com>",
+      "from_display_name": "Sarah Jenkins",
+      "from_email": "sjenkins@enterprise.com",
+      "to": "marketing-team@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Wed, 20 May 2026 19:27:34 +0000",
+      "message_id": "<365502.alert-pds@enterprise.com>",
+      "hop_count": 2,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hi team,\n\nI've updated the slide deck for our Q3 planning session. Can everyone review slide 5 and add their updates before tomorrow morning?\n\nHere is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+      "urls": [
+        "http://internal.enterprise.com/marketing/q3-sync"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://internal.enterprise.com/marketing/q3-sync",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1001",
+    "timestamp": "2026-05-20T18:27:34.952457",
+    "sender": "\"Microsoft Office 365 Security Team\" <no-reply@security-office365-updates.com>",
+    "recipient": "cfo@enterprise.com",
+    "recipient_group": "Executive",
+    "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=softfail dkim=none dmarc=none\nReceived: from rogue-relay.unknownhost.net (198.51.100.220)\nFrom: \"Microsoft Office 365 Security Team\" <no-reply@security-office365-updates.com>\nTo: <cfo@enterprise.com>\nSubject: ACTION REQUIRED: Unusual Sign-in Detected for Security Alert\nDate: Wed, 20 May 2026 18:27:34 +0000\nMessage-ID: <915822.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nMicrosoft Office 365\n\nYour account has experienced an unusual sign-in attempt from a new location.\n\nLocation: Moscow, Russia\nIP Address: 82.102.23.109\n\nTo prevent permanent deletion of your account and suspension of your corporate email services, you must verify your identity immediately. Failure to verify within 24 hours will result in complete lockout of your workspace.\n\nVerify your identity here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nThank you,\nMicrosoft Security Team",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+      "from": "Microsoft Office 365 Security Team <no-reply@security-office365-updates.com>",
+      "from_display_name": "Microsoft Office 365 Security Team",
+      "from_email": "no-reply@security-office365-updates.com",
+      "to": "cfo@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Wed, 20 May 2026 18:27:34 +0000",
+      "message_id": "<915822.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "softfail",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Microsoft Office 365\n\nYour account has experienced an unusual sign-in attempt from a new location.\n\nLocation: Moscow, Russia\nIP Address: 82.102.23.109\n\nTo prevent permanent deletion of your account and suspension of your corporate email services, you must verify your identity immediately. Failure to verify within 24 hours will result in complete lockout of your workspace.\n\nVerify your identity here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nThank you,\nMicrosoft Security Team",
+      "urls": [
+        "http://microsoft.com-update.security-checkpoint.xyz/login.php"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.788,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.872,
+        "bec": 0.646,
+        "generic_phishing": 0.504
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.8333333333333334
+        },
+        {
+          "signal": "urgency_coercion_cues",
+          "weight": 0.7
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 0.4,
+      "average_score": 0.4,
+      "details": [
+        {
+          "url": "http://microsoft.com-update.security-checkpoint.xyz/login.php",
+          "domain": "security-checkpoint.xyz",
+          "score": 0.4,
+          "indicators": [
+            "redirect_shortener_used"
+          ],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Authentication Fail": 0.12,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Display Name Impersonation": 0.25,
+        "Semantic Body Threat Cues": 0.394,
+        "Embedded Links Risk Score": 0.18
+      },
+      "explanations": [
+        "SPF record verification returned softfail",
+        "Sender name 'Microsoft Office 365 Security Team' mimics authority but uses external domain 'security-office365-updates.com'",
+        "Body semantics contain credential harvesting request indicators"
+      ]
+    },
+    "analyst_action": "overridden_benign",
+    "analyst_notes": "False positive: verified internal vendor.",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
+    "id": "alert_1015",
+    "timestamp": "2026-05-20T14:27:34.952457",
+    "sender": "\"Robert Davis (CEO)\" <ceo.robert.davis@gmail.com>",
+    "recipient": "payroll.officer@enterprise.com",
+    "recipient_group": "Finance",
+    "subject": "URGENT: Quick Task",
+    "verdict": "phishing",
+    "threat_category": "bec",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=none dmarc=fail\nReceived: from mail-sourcer.gmail.com (192.0.2.45)\nReply-To: executive.office.remotedesk@office-admin-desk.com\nFrom: \"Robert Davis (CEO)\" <ceo.robert.davis@gmail.com>\nTo: <payroll.officer@enterprise.com>\nSubject: URGENT: Quick Task\nDate: Wed, 20 May 2026 14:27:34 +0000\nMessage-ID: <259016.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nAre you at your desk?\n\nI'm currently tied up in an board meeting and need you to handle an urgent request immediately. I need you to purchase 10 Apple gift cards worth $100 each for a client reimbursement. Please send me the clear photos of the codes on the back of the cards as soon as you get them.\n\nDo not call me, as I cannot talk right now. Please confirm receipt.\n\nThanks,\nRobert Davis\nChief Executive Officer",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "URGENT: Quick Task",
+      "from": "\"Robert Davis (CEO)\" <ceo.robert.davis@gmail.com>",
+      "from_display_name": "Robert Davis (CEO)",
+      "from_email": "ceo.robert.davis@gmail.com",
+      "to": "payroll.officer@enterprise.com",
+      "reply_to": "executive.office.remotedesk@office-admin-desk.com",
+      "reply_to_mismatch": true,
+      "date": "Wed, 20 May 2026 14:27:34 +0000",
+      "message_id": "<259016.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "pass",
+      "dkim_status": "none",
+      "dmarc_status": "fail",
+      "body_text": "Are you at your desk?\n\nI'm currently tied up in an board meeting and need you to handle an urgent request immediately. I need you to purchase 10 Apple gift cards worth $100 each for a client reimbursement. Please send me the clear photos of the codes on the back of the cards as soon as you get them.\n\nDo not call me, as I cannot talk right now. Please confirm receipt.\n\nThanks,\nRobert Davis\nChief Executive Officer",
+      "urls": [],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.637,
+      "intent": "bec",
+      "categories": {
+        "credential_harvesting": 0.479,
+        "bec": 0.744,
+        "generic_phishing": 0.454
+      },
+      "linguistic_signals": [
+        {
+          "signal": "bec_financial_intent",
+          "weight": 0.5
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": []
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "bec",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Fail": 0.35,
+        "Reply-To Domain Mismatch": 0.3,
+        "Semantic Body Threat Cues": 0.319
+      },
+      "explanations": [
+        "DMARC alignment checks failed (spoofing indicator)",
+        "Reply-to field does not match the sender domain (ceo.robert.davis@gmail.com)",
+        "Linguistic patterns match executive financial manipulation / BEC template"
+      ]
+    },
+    "analyst_action": "confirmed",
+    "analyst_notes": "Confirmed phishing threat vector.",
+    "campaign_id": "camp_bec_wire_01"
+  },
+  {
+    "id": "alert_1000",
+    "timestamp": "2026-05-20T13:27:34.952457",
+    "sender": "\"Robert Davis (CEO)\" <ceo.robert.davis@gmail.com>",
+    "recipient": "payroll.officer@enterprise.com",
+    "recipient_group": "Finance",
+    "subject": "URGENT: Quick Task",
+    "verdict": "phishing",
+    "threat_category": "bec",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=none dmarc=fail\nReceived: from mail-sourcer.gmail.com (192.0.2.45)\nReply-To: executive.office.remotedesk@office-admin-desk.com\nFrom: \"Robert Davis (CEO)\" <ceo.robert.davis@gmail.com>\nTo: <payroll.officer@enterprise.com>\nSubject: URGENT: Quick Task\nDate: Wed, 20 May 2026 13:27:34 +0000\nMessage-ID: <160203.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nAre you at your desk?\n\nI'm currently tied up in an board meeting and need you to handle an urgent request immediately. I need you to purchase 10 Apple gift cards worth $100 each for a client reimbursement. Please send me the clear photos of the codes on the back of the cards as soon as you get them.\n\nDo not call me, as I cannot talk right now. Please confirm receipt.\n\nThanks,\nRobert Davis\nChief Executive Officer",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "URGENT: Quick Task",
+      "from": "\"Robert Davis (CEO)\" <ceo.robert.davis@gmail.com>",
+      "from_display_name": "Robert Davis (CEO)",
+      "from_email": "ceo.robert.davis@gmail.com",
+      "to": "payroll.officer@enterprise.com",
+      "reply_to": "executive.office.remotedesk@office-admin-desk.com",
+      "reply_to_mismatch": true,
+      "date": "Wed, 20 May 2026 13:27:34 +0000",
+      "message_id": "<160203.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "pass",
+      "dkim_status": "none",
+      "dmarc_status": "fail",
+      "body_text": "Are you at your desk?\n\nI'm currently tied up in an board meeting and need you to handle an urgent request immediately. I need you to purchase 10 Apple gift cards worth $100 each for a client reimbursement. Please send me the clear photos of the codes on the back of the cards as soon as you get them.\n\nDo not call me, as I cannot talk right now. Please confirm receipt.\n\nThanks,\nRobert Davis\nChief Executive Officer",
+      "urls": [],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.637,
+      "intent": "bec",
+      "categories": {
+        "credential_harvesting": 0.479,
+        "bec": 0.744,
+        "generic_phishing": 0.454
+      },
+      "linguistic_signals": [
+        {
+          "signal": "bec_financial_intent",
+          "weight": 0.5
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": []
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "bec",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Fail": 0.35,
+        "Reply-To Domain Mismatch": 0.3,
+        "Semantic Body Threat Cues": 0.319
+      },
+      "explanations": [
+        "DMARC alignment checks failed (spoofing indicator)",
+        "Reply-to field does not match the sender domain (ceo.robert.davis@gmail.com)",
+        "Linguistic patterns match executive financial manipulation / BEC template"
+      ]
+    },
+    "analyst_action": "confirmed",
+    "analyst_notes": "Confirmed phishing threat vector.",
+    "campaign_id": "camp_bec_wire_01"
+  },
+  {
+    "id": "alert_1012",
+    "timestamp": "2026-05-20T11:27:34.952457",
+    "sender": "\"HR Department\" <hr@enterprise.com>",
+    "recipient": "all-hands@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Quarterly Benefits Update & Open Enrollment",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nFrom: \"HR Department\" <hr@enterprise.com>\nTo: <all-hands@enterprise.com>\nSubject: Quarterly Benefits Update & Open Enrollment\nDate: Wed, 20 May 2026 11:27:34 +0000\nMessage-ID: <152240.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: multipart/mixed; boundary=\"----=_Part_Boundary_PDS\"\n\n------=_Part_Boundary_PDS\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office\n------=_Part_Boundary_PDS\nContent-Type: application/pdf; name=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Disposition: attachment; filename=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Transfer-Encoding: base64\n\nJVBERi0xLjQKJcfsj6IKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIK\n------=_Part_Boundary_PDS--",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Quarterly Benefits Update & Open Enrollment",
+      "from": "HR Department <hr@enterprise.com>",
+      "from_display_name": "HR Department",
+      "from_email": "hr@enterprise.com",
+      "to": "all-hands@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Wed, 20 May 2026 11:27:34 +0000",
+      "message_id": "<152240.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office",
+      "urls": [
+        "http://hr-portal.enterprise.com/benefits/2026"
+      ],
+      "attachments": [
+        {
+          "filename": "Benefits_Enrollment_Guide_2026.pdf",
+          "content_type": "application/pdf",
+          "size_bytes": 54,
+          "is_high_risk": false,
+          "has_macros": false
+        }
+      ]
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://hr-portal.enterprise.com/benefits/2026",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1009",
+    "timestamp": "2026-05-20T09:27:34.952457",
+    "sender": "\"Sarah Jenkins\" <sjenkins@enterprise.com>",
+    "recipient": "marketing-team@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Q3 Marketing Strategy Sync",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nReceived: from internal-switch.enterprise.com (10.0.1.5)\nFrom: \"Sarah Jenkins\" <sjenkins@enterprise.com>\nTo: <marketing-team@enterprise.com>\nSubject: Q3 Marketing Strategy Sync\nDate: Wed, 20 May 2026 09:27:34 +0000\nMessage-ID: <148848.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHi team,\n\nI've updated the slide deck for our Q3 planning session. Can everyone review slide 5 and add their updates before tomorrow morning?\n\nHere is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Q3 Marketing Strategy Sync",
+      "from": "Sarah Jenkins <sjenkins@enterprise.com>",
+      "from_display_name": "Sarah Jenkins",
+      "from_email": "sjenkins@enterprise.com",
+      "to": "marketing-team@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Wed, 20 May 2026 09:27:34 +0000",
+      "message_id": "<148848.alert-pds@enterprise.com>",
+      "hop_count": 2,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hi team,\n\nI've updated the slide deck for our Q3 planning session. Can everyone review slide 5 and add their updates before tomorrow morning?\n\nHere is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+      "urls": [
+        "http://internal.enterprise.com/marketing/q3-sync"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://internal.enterprise.com/marketing/q3-sync",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1018",
+    "timestamp": "2026-05-20T09:27:34.952457",
+    "sender": "\"HR Department\" <hr@enterprise.com>",
+    "recipient": "all-hands@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Quarterly Benefits Update & Open Enrollment",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nFrom: \"HR Department\" <hr@enterprise.com>\nTo: <all-hands@enterprise.com>\nSubject: Quarterly Benefits Update & Open Enrollment\nDate: Wed, 20 May 2026 09:27:34 +0000\nMessage-ID: <880921.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: multipart/mixed; boundary=\"----=_Part_Boundary_PDS\"\n\n------=_Part_Boundary_PDS\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office\n------=_Part_Boundary_PDS\nContent-Type: application/pdf; name=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Disposition: attachment; filename=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Transfer-Encoding: base64\n\nJVBERi0xLjQKJcfsj6IKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIK\n------=_Part_Boundary_PDS--",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Quarterly Benefits Update & Open Enrollment",
+      "from": "HR Department <hr@enterprise.com>",
+      "from_display_name": "HR Department",
+      "from_email": "hr@enterprise.com",
+      "to": "all-hands@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Wed, 20 May 2026 09:27:34 +0000",
+      "message_id": "<880921.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office",
+      "urls": [
+        "http://hr-portal.enterprise.com/benefits/2026"
+      ],
+      "attachments": [
+        {
+          "filename": "Benefits_Enrollment_Guide_2026.pdf",
+          "content_type": "application/pdf",
+          "size_bytes": 54,
+          "is_high_risk": false,
+          "has_macros": false
+        }
+      ]
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://hr-portal.enterprise.com/benefits/2026",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1003",
+    "timestamp": "2026-05-20T05:27:34.952457",
+    "sender": "\"DHL Express Delivery\" <dhl-tracking@deliverysupport-hub.net>",
+    "recipient": "developer@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Your package delivery requires immediate action",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.39,
+    "raw_email": "Authentication-Results: mx.google.com; spf=neutral dkim=none dmarc=none\nReceived: from anonymous-node.ru (185.190.140.23)\nFrom: \"DHL Express Delivery\" <dhl-tracking@deliverysupport-hub.net>\nTo: <developer@enterprise.com>\nSubject: Your package delivery requires immediate action\nDate: Wed, 20 May 2026 05:27:34 +0000\nMessage-ID: <480741.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nDear Customer,\n\nWe were unable to deliver your DHL package today due to incorrect address information. A small customs clearance fee of $1.50 is outstanding.\n\nTo schedule a redelivery, please update your billing address and complete payment using the link below within the next 48 hours.\n\nUpdate shipping details here: http://dhl-tracking-portal.net-billing-verify.ru/dhl/track\n\nDHL Express Services Ltd.",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Your package delivery requires immediate action",
+      "from": "DHL Express Delivery <dhl-tracking@deliverysupport-hub.net>",
+      "from_display_name": "DHL Express Delivery",
+      "from_email": "dhl-tracking@deliverysupport-hub.net",
+      "to": "developer@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Wed, 20 May 2026 05:27:34 +0000",
+      "message_id": "<480741.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "neutral",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Dear Customer,\n\nWe were unable to deliver your DHL package today due to incorrect address information. A small customs clearance fee of $1.50 is outstanding.\n\nTo schedule a redelivery, please update your billing address and complete payment using the link below within the next 48 hours.\n\nUpdate shipping details here: http://dhl-tracking-portal.net-billing-verify.ru/dhl/track\n\nDHL Express Services Ltd.",
+      "urls": [
+        "http://dhl-tracking-portal.net-billing-verify.ru/dhl/track"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.2,
+      "average_score": 0.2,
+      "details": [
+        {
+          "url": "http://dhl-tracking-portal.net-billing-verify.ru/dhl/track",
+          "domain": "net-billing-verify.ru",
+          "score": 0.2,
+          "indicators": [
+            "hyphenated_domain"
+          ],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.39,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Embedded Links Risk Score": 0.09
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1017",
+    "timestamp": "2026-05-19T17:27:34.952457",
+    "sender": "\"HR Department\" <hr@enterprise.com>",
+    "recipient": "all-hands@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Quarterly Benefits Update & Open Enrollment",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nFrom: \"HR Department\" <hr@enterprise.com>\nTo: <all-hands@enterprise.com>\nSubject: Quarterly Benefits Update & Open Enrollment\nDate: Tue, 19 May 2026 17:27:34 +0000\nMessage-ID: <628212.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: multipart/mixed; boundary=\"----=_Part_Boundary_PDS\"\n\n------=_Part_Boundary_PDS\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office\n------=_Part_Boundary_PDS\nContent-Type: application/pdf; name=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Disposition: attachment; filename=\"Benefits_Enrollment_Guide_2026.pdf\"\nContent-Transfer-Encoding: base64\n\nJVBERi0xLjQKJcfsj6IKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIK\n------=_Part_Boundary_PDS--",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Quarterly Benefits Update & Open Enrollment",
+      "from": "HR Department <hr@enterprise.com>",
+      "from_display_name": "HR Department",
+      "from_email": "hr@enterprise.com",
+      "to": "all-hands@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Tue, 19 May 2026 17:27:34 +0000",
+      "message_id": "<628212.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hello Everyone,\n\nIt is that time of the year again. Open Enrollment for health and dental benefits begins next Monday. Please review the updated benefit guidebook attached and make your selections through the HR Portal.\n\nPortal Link: http://hr-portal.enterprise.com/benefits/2026\n\nHR Office",
+      "urls": [
+        "http://hr-portal.enterprise.com/benefits/2026"
+      ],
+      "attachments": [
+        {
+          "filename": "Benefits_Enrollment_Guide_2026.pdf",
+          "content_type": "application/pdf",
+          "size_bytes": 54,
+          "is_high_risk": false,
+          "has_macros": false
+        }
+      ]
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://hr-portal.enterprise.com/benefits/2026",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1020",
+    "timestamp": "2026-05-19T16:27:34.952457",
+    "sender": "\"Microsoft Office 365 Security Team\" <no-reply@security-office365-updates.com>",
+    "recipient": "cfo@enterprise.com",
+    "recipient_group": "Executive",
+    "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=softfail dkim=none dmarc=none\nReceived: from rogue-relay.unknownhost.net (198.51.100.220)\nFrom: \"Microsoft Office 365 Security Team\" <no-reply@security-office365-updates.com>\nTo: <cfo@enterprise.com>\nSubject: ACTION REQUIRED: Unusual Sign-in Detected for Security Alert\nDate: Tue, 19 May 2026 16:27:34 +0000\nMessage-ID: <532718.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nMicrosoft Office 365\n\nYour account has experienced an unusual sign-in attempt from a new location.\n\nLocation: Moscow, Russia\nIP Address: 82.102.23.109\n\nTo prevent permanent deletion of your account and suspension of your corporate email services, you must verify your identity immediately. Failure to verify within 24 hours will result in complete lockout of your workspace.\n\nVerify your identity here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nThank you,\nMicrosoft Security Team",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+      "from": "Microsoft Office 365 Security Team <no-reply@security-office365-updates.com>",
+      "from_display_name": "Microsoft Office 365 Security Team",
+      "from_email": "no-reply@security-office365-updates.com",
+      "to": "cfo@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Tue, 19 May 2026 16:27:34 +0000",
+      "message_id": "<532718.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "softfail",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Microsoft Office 365\n\nYour account has experienced an unusual sign-in attempt from a new location.\n\nLocation: Moscow, Russia\nIP Address: 82.102.23.109\n\nTo prevent permanent deletion of your account and suspension of your corporate email services, you must verify your identity immediately. Failure to verify within 24 hours will result in complete lockout of your workspace.\n\nVerify your identity here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nThank you,\nMicrosoft Security Team",
+      "urls": [
+        "http://microsoft.com-update.security-checkpoint.xyz/login.php"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.788,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.872,
+        "bec": 0.646,
+        "generic_phishing": 0.504
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.8333333333333334
+        },
+        {
+          "signal": "urgency_coercion_cues",
+          "weight": 0.7
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 0.4,
+      "average_score": 0.4,
+      "details": [
+        {
+          "url": "http://microsoft.com-update.security-checkpoint.xyz/login.php",
+          "domain": "security-checkpoint.xyz",
+          "score": 0.4,
+          "indicators": [
+            "redirect_shortener_used"
+          ],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Authentication Fail": 0.12,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Display Name Impersonation": 0.25,
+        "Semantic Body Threat Cues": 0.394,
+        "Embedded Links Risk Score": 0.18
+      },
+      "explanations": [
+        "SPF record verification returned softfail",
+        "Sender name 'Microsoft Office 365 Security Team' mimics authority but uses external domain 'security-office365-updates.com'",
+        "Body semantics contain credential harvesting request indicators"
+      ]
+    },
+    "analyst_action": "confirmed",
+    "analyst_notes": "Confirmed phishing threat vector.",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
+    "id": "alert_1008",
+    "timestamp": "2026-05-19T10:27:34.952457",
+    "sender": "\"Sarah Jenkins\" <sjenkins@enterprise.com>",
+    "recipient": "marketing-team@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Q3 Marketing Strategy Sync",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nReceived: from mail.enterprise.com (mail.enterprise.com [198.51.100.12])\nReceived: from internal-switch.enterprise.com (10.0.1.5)\nFrom: \"Sarah Jenkins\" <sjenkins@enterprise.com>\nTo: <marketing-team@enterprise.com>\nSubject: Q3 Marketing Strategy Sync\nDate: Tue, 19 May 2026 10:27:34 +0000\nMessage-ID: <534184.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nHi team,\n\nI've updated the slide deck for our Q3 planning session. Can everyone review slide 5 and add their updates before tomorrow morning?\n\nHere is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Q3 Marketing Strategy Sync",
+      "from": "Sarah Jenkins <sjenkins@enterprise.com>",
+      "from_display_name": "Sarah Jenkins",
+      "from_email": "sjenkins@enterprise.com",
+      "to": "marketing-team@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Tue, 19 May 2026 10:27:34 +0000",
+      "message_id": "<534184.alert-pds@enterprise.com>",
+      "hop_count": 2,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hi team,\n\nI've updated the slide deck for our Q3 planning session. Can everyone review slide 5 and add their updates before tomorrow morning?\n\nHere is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+      "urls": [
+        "http://internal.enterprise.com/marketing/q3-sync"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "http://internal.enterprise.com/marketing/q3-sync",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1024",
+    "timestamp": "2026-05-18T16:27:34.952457",
+    "sender": "\"DHL Express Delivery\" <dhl-tracking@deliverysupport-hub.net>",
+    "recipient": "developer@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Your package delivery requires immediate action",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.39,
+    "raw_email": "Authentication-Results: mx.google.com; spf=neutral dkim=none dmarc=none\nReceived: from anonymous-node.ru (185.190.140.23)\nFrom: \"DHL Express Delivery\" <dhl-tracking@deliverysupport-hub.net>\nTo: <developer@enterprise.com>\nSubject: Your package delivery requires immediate action\nDate: Mon, 18 May 2026 16:27:34 +0000\nMessage-ID: <803673.alert-pds@enterprise.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 7bit\n\nDear Customer,\n\nWe were unable to deliver your DHL package today due to incorrect address information. A small customs clearance fee of $1.50 is outstanding.\n\nTo schedule a redelivery, please update your billing address and complete payment using the link below within the next 48 hours.\n\nUpdate shipping details here: http://dhl-tracking-portal.net-billing-verify.ru/dhl/track\n\nDHL Express Services Ltd.",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Your package delivery requires immediate action",
+      "from": "DHL Express Delivery <dhl-tracking@deliverysupport-hub.net>",
+      "from_display_name": "DHL Express Delivery",
+      "from_email": "dhl-tracking@deliverysupport-hub.net",
+      "to": "developer@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Mon, 18 May 2026 16:27:34 +0000",
+      "message_id": "<803673.alert-pds@enterprise.com>",
+      "hop_count": 1,
+      "spf_status": "neutral",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Dear Customer,\n\nWe were unable to deliver your DHL package today due to incorrect address information. A small customs clearance fee of $1.50 is outstanding.\n\nTo schedule a redelivery, please update your billing address and complete payment using the link below within the next 48 hours.\n\nUpdate shipping details here: http://dhl-tracking-portal.net-billing-verify.ru/dhl/track\n\nDHL Express Services Ltd.",
+      "urls": [
+        "http://dhl-tracking-portal.net-billing-verify.ru/dhl/track"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.2,
+      "average_score": 0.2,
+      "details": [
+        {
+          "url": "http://dhl-tracking-portal.net-billing-verify.ru/dhl/track",
+          "domain": "net-billing-verify.ru",
+          "score": 0.2,
+          "indicators": [
+            "hyphenated_domain"
+          ],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.39,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Embedded Links Risk Score": 0.09
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  }
+]
