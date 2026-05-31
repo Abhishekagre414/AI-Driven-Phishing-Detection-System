@@ -1,5 +1,155 @@
 [
   {
+    "id": "alert_1780182742_28",
+    "timestamp": "2026-05-31T04:42:22.863913Z",
+    "sender": "",
+    "recipient": "noreply@unstop.news",
+    "recipient_group": "Default",
+    "subject": "",
+    "verdict": "suspicious",
+    "threat_category": "bec",
+    "confidence_score": 0.577,
+    "raw_email": "Hi Abhishek,\n\nFinale Week is officially here!\n\nThe regular season is wrapping up, the leaderboard is tight, and every single prediction counts toward your mega-victory.\n\nEnter UPL & Predict Now!\nTonight is a high-octane battle for the Top 2 spots:\n\nVirat Kohli & RCB: Will the King anchor another legendary run-chase?\nPat Cummins & SRH: Will the Orange Army defend their home turf in Hyderabad?\nThe Rewards: 5 simple questions stand between you and \u20b98,000 in vouchers + official IPL merchandise.\n\nDeadline: Answer them before the toss at 6:59 PM to ensure your entry counts!\nMay the best predictor win.\n\nRegards,\nTeam Unstop",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "",
+      "from": "",
+      "from_display_name": "",
+      "from_email": "",
+      "to": "",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "none",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Hi Abhishek,\n\nFinale Week is officially here!\n\nThe regular season is wrapping up, the leaderboard is tight, and every single prediction counts toward your mega-victory.\n\nEnter UPL & Predict Now!\nTonight is a high-octane battle for the Top 2 spots:\n\nVirat Kohli & RCB: Will the King anchor another legendary run-chase?\nPat Cummins & SRH: Will the Orange Army defend their home turf in Hyderabad?\nThe Rewards: 5 simple questions stand between you and \\u20b98,000 in vouchers + official IPL merchandise.\n\nDeadline: Answer them before the toss at 6:59 PM to ensure your entry counts!\nMay the best predictor win.\n\nRegards,\nTeam Unstop",
+      "urls": [],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.453,
+      "intent": "bec",
+      "categories": {
+        "credential_harvesting": 0.479,
+        "bec": 0.517,
+        "generic_phishing": 0.454
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": []
+    },
+    "fusion_result": {
+      "verdict": "suspicious",
+      "threat_category": "bec",
+      "confidence_score": 0.577,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Missing Record": 0.05,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Semantic Body Threat Cues": 0.227
+      },
+      "explanations": [
+        "Linguistic patterns match executive financial manipulation / BEC template"
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": "camp_bec_wire_01"
+  },
+  {
+    "id": "alert_1780182407_27",
+    "timestamp": "2026-05-31T04:36:47.876591Z",
+    "sender": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+    "recipient": "cfo@enterprise.com",
+    "recipient_group": "Executive",
+    "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=softfail dkim=none dmarc=none\nFrom: \"Microsoft Office 365 Support\" <no-reply@security-office365-updates.com>\nTo: <cfo@enterprise.com>\nSubject: ACTION REQUIRED: Unusual Sign-in Detected for Security Alert\nDate: Sat, 23 May 2026 15:20:00 +0000\n\nYour Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+      "from": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+      "from_display_name": "Microsoft Office 365 Support",
+      "from_email": "no-reply@security-office365-updates.com",
+      "to": "cfo@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Sat, 23 May 2026 15:20:00 +0000",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "softfail",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Your Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+      "urls": [
+        "http://microsoft.com-update.security-checkpoint.xyz/login.php"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.706,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.791,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.8333333333333334
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 0.4,
+      "average_score": 0.4,
+      "details": [
+        {
+          "url": "http://microsoft.com-update.security-checkpoint.xyz/login.php",
+          "domain": "security-checkpoint.xyz",
+          "score": 0.4,
+          "indicators": [
+            "redirect_shortener_used"
+          ],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Authentication Fail": 0.12,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Display Name Impersonation": 0.25,
+        "Semantic Body Threat Cues": 0.353,
+        "Embedded Links Risk Score": 0.18
+      },
+      "explanations": [
+        "SPF record verification returned softfail",
+        "Sender name 'Microsoft Office 365 Support' mimics authority but uses external domain 'security-office365-updates.com'",
+        "Body semantics contain credential harvesting request indicators"
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
     "id": "alert_d2d307ab",
     "timestamp": "2026-05-23T15:45:39.716694",
     "sender": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
