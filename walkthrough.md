@@ -129,3 +129,12 @@ dist/assets/index-yZuF1fCD.js      608.17 kB │ gzip: 177.92 kB
 3. **Active Learning Ingestion**: High-entropy boundary alerts (confidence scores in the 40%-80% range) are routed to a specialized Labeling Queue. Analyst overrides/confirmations generate high-quality labeled training samples.
 4. **Resilient Offline Architecture**: If the API goes offline, the frontend seamlessly transitions to client-side simulations utilizing [mock_data.js](file:///c:/Users/Admin/Desktop/AIML/web/src/mock_data.js), making it perfect for standalone demonstrations or sandboxed client pitches.
 5. **SEO & Design Aesthetics**: Implemented a responsive glassmorphic Space Dark theme utilizing Google Fonts (Outfit, Inter, JetBrains Mono) and subtle CSS micro-animations.
+
+---
+
+## Troubleshooting
+
+### API Offline / Proxy Connection Refused
+If the frontend reports that the API is offline despite the `uvicorn` backend running correctly, check the Node.js localhost resolution:
+* Node.js v17+ resolves `localhost` to `::1` (IPv6), but `uvicorn` binds to `127.0.0.1` (IPv4) by default.
+* **Fix**: The `vite.config.js` proxy and the `App.jsx` fetch URLs have been updated to explicitly target `http://127.0.0.1:8000` instead of `localhost:8000` to prevent `ECONNREFUSED` proxy errors.
