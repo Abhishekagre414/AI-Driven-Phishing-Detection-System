@@ -21,11 +21,11 @@ Test modules
 from fastapi.testclient import TestClient
 
 # ── Import application and components ──────────────────────────────────────
-from api.main          import app
-from api.nlp_analyzer  import NLPAnalyzer
-from api.url_scorer    import URLScorer
-from api.fusion_engine import FusionEngine
-from api.email_parser  import EmailParser
+from backend.main import app
+from ml.nlp_analyzer import NLPAnalyzer
+from security.url_scorer import URLScorer
+from ml.fusion_engine import FusionEngine
+from security.email_parser import EmailParser
 
 client = TestClient(app)
 

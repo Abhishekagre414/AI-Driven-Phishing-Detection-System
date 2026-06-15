@@ -1,5 +1,776 @@
 [
   {
+    "id": "alert_1781534742_97",
+    "timestamp": "2026-06-15T14:45:42.173037Z",
+    "sender": "",
+    "recipient": " <donotreply@tryhackme.com> ",
+    "recipient_group": "Default",
+    "subject": "",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.35,
+    "raw_email": "\n\nSkip to content\nUsing Gmail with screen readers\n5 of 3,465\nDon\u2019t lose your spark \ud83d\udd25\nInbox\n\nTryHackMe <donotreply@tryhackme.com> Unsubscribe\nSun, Jun 14, 8:39\u202fPM (23 hours ago)\nto me\n\nTryHackMe Logo\nTryHackMe Motivation Banner\nHey abhishekagre001,\n \nYou\u2019ve started something great, now it\u2019s time to keep the flame alive.\n \nEach completed room doesn\u2019t just build your knowledge; it builds your confidence.\n \nYour 7-day window is still open! Complete one room now and unlock 25% off Premium to keep your momentum going.\n \nPremium gives you:\n \n\u2b50 Unlimited access to hands-on rooms.\n \n\u2b50 Early access to new releases and tools.\n \n\u2b50 A complete learning journey built around your goals.\n \nDon\u2019t stop now. You\u2019re closer than you think.\n \n\ud83d\udd25 Keep My Streak Going\nDiscord\tX\tInstagram\tLinkedIn\tYouTube\nTerms | Unsubscribe\n\u00a9 2026 TryHackMe. All rights reserved.\n",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "",
+      "from": "",
+      "from_display_name": "",
+      "from_email": "",
+      "to": "",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "none",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Skip to content\nUsing Gmail with screen readers\n5 of 3,465\nDon\\u2019t lose your spark \\U0001f525\nInbox\n\nTryHackMe <donotreply@tryhackme.com> Unsubscribe\nSun, Jun 14, 8:39\\u202fPM (23 hours ago)\nto me\n\nTryHackMe Logo\nTryHackMe Motivation Banner\nHey abhishekagre001,\n \nYou\\u2019ve started something great, now it\\u2019s time to keep the flame alive.\n \nEach completed room doesn\\u2019t just build your knowledge; it builds your confidence.\n \nYour 7-day window is still open! Complete one room now and unlock 25% off Premium to keep your momentum going.\n \nPremium gives you:\n \n\\u2b50 Unlimited access to hands-on rooms.\n \n\\u2b50 Early access to new releases and tools.\n \n\\u2b50 A complete learning journey built around your goals.\n \nDon\\u2019t stop now. You\\u2019re closer than you think.\n \n\\U0001f525 Keep My Streak Going\nDiscord\tX\tInstagram\tLinkedIn\tYouTube\nTerms | Unsubscribe\n 2026 TryHackMe. All rights reserved.",
+      "urls": [],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": []
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.35,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Missing Record": 0.05,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1781534665_96",
+    "timestamp": "2026-06-15T14:44:25.957983Z",
+    "sender": "paypal-support@secure-paypal-alert.com",
+    "recipient": " victim@example.com",
+    "recipient_group": "Default",
+    "subject": "Your PayPal Account Has Been Limited",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "From: paypal-support@secure-paypal-alert.com\nTo: victim@example.com\nSubject: Your PayPal Account Has Been Limited\n\nDear Customer,\n\nYour account has been temporarily limited due to unusual activity.\n\nPlease verify your information immediately:\nhttp://paypal-account-verification-example.com\n\nFailure to verify may result in account closure.\n\nPayPal Security Department",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Your PayPal Account Has Been Limited",
+      "from": "paypal-support@secure-paypal-alert.com",
+      "from_display_name": "",
+      "from_email": "paypal-support@secure-paypal-alert.com",
+      "to": "victim@example.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "none",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Dear Customer,\n\nYour account has been temporarily limited due to unusual activity.\n\nPlease verify your information immediately:\nhttp://paypal-account-verification-example.com\n\nFailure to verify may result in account closure.\n\nPayPal Security Department",
+      "urls": [
+        "http://paypal-account-verification-example.com"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.5,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.125,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.125
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 1.0,
+      "average_score": 1.0,
+      "details": [
+        {
+          "url": "http://paypal-account-verification-example.com",
+          "domain": "paypal-account-verification-example.com",
+          "score": 1.0,
+          "indicators": [
+            "hyphenated_domain",
+            "spoofing_paypal_lookalike",
+            "ssl_certificate_missing_or_invalid"
+          ],
+          "ssl_valid": false,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Missing Record": 0.05,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Semantic Body Threat Cues": 0.25,
+        "Embedded Links Risk Score": 0.4
+      },
+      "explanations": [
+        "Body semantics contain credential harvesting request indicators",
+        "Contains link typosquatting mimicking a trusted domain: paypal-account-verification-example.com",
+        "Embedded link domain 'paypal-account-verification-example.com' lacks valid SSL certificate"
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
+    "id": "alert_1781534656_95",
+    "timestamp": "2026-06-15T14:44:16.238660Z",
+    "sender": "paypal-support@secure-paypal-alert.com",
+    "recipient": " victim@example.com",
+    "recipient_group": "Default",
+    "subject": "Your PayPal Account Has Been Limited",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "From: paypal-support@secure-paypal-alert.com\nTo: victim@example.com\nSubject: Your PayPal Account Has Been Limited\n\nDear Customer,\n\nYour account has been temporarily limited due to unusual activity.\n\nPlease verify your information immediately:\nhttp://paypal-account-verification-example.com\n\nFailure to verify may result in account closure.\n\nPayPal Security Department",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Your PayPal Account Has Been Limited",
+      "from": "paypal-support@secure-paypal-alert.com",
+      "from_display_name": "",
+      "from_email": "paypal-support@secure-paypal-alert.com",
+      "to": "victim@example.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "none",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Dear Customer,\n\nYour account has been temporarily limited due to unusual activity.\n\nPlease verify your information immediately:\nhttp://paypal-account-verification-example.com\n\nFailure to verify may result in account closure.\n\nPayPal Security Department",
+      "urls": [
+        "http://paypal-account-verification-example.com"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.5,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.125,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.125
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 1.0,
+      "average_score": 1.0,
+      "details": [
+        {
+          "url": "http://paypal-account-verification-example.com",
+          "domain": "paypal-account-verification-example.com",
+          "score": 1.0,
+          "indicators": [
+            "hyphenated_domain",
+            "spoofing_paypal_lookalike",
+            "ssl_certificate_missing_or_invalid"
+          ],
+          "ssl_valid": false,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Missing Record": 0.05,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Semantic Body Threat Cues": 0.25,
+        "Embedded Links Risk Score": 0.4
+      },
+      "explanations": [
+        "Body semantics contain credential harvesting request indicators",
+        "Contains link typosquatting mimicking a trusted domain: paypal-account-verification-example.com",
+        "Embedded link domain 'paypal-account-verification-example.com' lacks valid SSL certificate"
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
+    "id": "alert_1781533039_94",
+    "timestamp": "2026-06-15T14:17:19.855404Z",
+    "sender": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+    "recipient": "cfo@enterprise.com",
+    "recipient_group": "Executive",
+    "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=softfail dkim=none dmarc=none\nFrom: \"Microsoft Office 365 Support\" <no-reply@security-office365-updates.com>\nTo: <cfo@enterprise.com>\nSubject: ACTION REQUIRED: Unusual Sign-in Detected for Security Alert\nDate: Sat, 23 May 2026 15:20:00 +0000\n\nYour Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+      "from": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+      "from_display_name": "Microsoft Office 365 Support",
+      "from_email": "no-reply@security-office365-updates.com",
+      "to": "cfo@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Sat, 23 May 2026 15:20:00 +0000",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "softfail",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Your Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+      "urls": [
+        "http://microsoft.com-update.security-checkpoint.xyz/login.php"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.706,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.417,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.417
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 1.0,
+      "average_score": 1.0,
+      "details": [
+        {
+          "url": "http://microsoft.com-update.security-checkpoint.xyz/login.php",
+          "domain": "security-checkpoint.xyz",
+          "score": 1.0,
+          "indicators": [
+            "redirect_shortener_used",
+            "spoofing_microsoft_lookalike",
+            "hyphenated_domain",
+            "ssl_certificate_missing_or_invalid"
+          ],
+          "ssl_valid": false,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Authentication Fail": 0.12,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Display Name Impersonation": 0.25,
+        "Semantic Body Threat Cues": 0.353,
+        "Embedded Links Risk Score": 0.4
+      },
+      "explanations": [
+        "SPF record verification returned softfail",
+        "Sender name 'Microsoft Office 365 Support' mimics authority but uses external domain 'security-office365-updates.com'",
+        "Body semantics contain credential harvesting request indicators",
+        "Redirect or URL shortener link detected to bypass inspection",
+        "Contains link typosquatting mimicking a trusted domain: security-checkpoint.xyz",
+        "Embedded link domain 'security-checkpoint.xyz' lacks valid SSL certificate"
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
+    "id": "alert_1781532873_93",
+    "timestamp": "2026-06-15T14:14:33.761319Z",
+    "sender": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+    "recipient": "cfo@enterprise.com",
+    "recipient_group": "Executive",
+    "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=softfail dkim=none dmarc=none\nFrom: \"Microsoft Office 365 Support\" <no-reply@security-office365-updates.com>\nTo: <cfo@enterprise.com>\nSubject: ACTION REQUIRED: Unusual Sign-in Detected for Security Alert\nDate: Sat, 23 May 2026 15:20:00 +0000\n\nYour Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+      "from": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+      "from_display_name": "Microsoft Office 365 Support",
+      "from_email": "no-reply@security-office365-updates.com",
+      "to": "cfo@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Sat, 23 May 2026 15:20:00 +0000",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "softfail",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Your Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+      "urls": [
+        "http://microsoft.com-update.security-checkpoint.xyz/login.php"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.706,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.417,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.417
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 1.0,
+      "average_score": 1.0,
+      "details": [
+        {
+          "url": "http://microsoft.com-update.security-checkpoint.xyz/login.php",
+          "domain": "security-checkpoint.xyz",
+          "score": 1.0,
+          "indicators": [
+            "ssl_certificate_missing_or_invalid",
+            "spoofing_microsoft_lookalike",
+            "redirect_shortener_used",
+            "hyphenated_domain"
+          ],
+          "ssl_valid": false,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Authentication Fail": 0.12,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Display Name Impersonation": 0.25,
+        "Semantic Body Threat Cues": 0.353,
+        "Embedded Links Risk Score": 0.4
+      },
+      "explanations": [
+        "SPF record verification returned softfail",
+        "Sender name 'Microsoft Office 365 Support' mimics authority but uses external domain 'security-office365-updates.com'",
+        "Body semantics contain credential harvesting request indicators",
+        "Embedded link domain 'security-checkpoint.xyz' lacks valid SSL certificate",
+        "Contains link typosquatting mimicking a trusted domain: security-checkpoint.xyz",
+        "Redirect or URL shortener link detected to bypass inspection"
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
+    "id": "alert_1781532873_92",
+    "timestamp": "2026-06-15T14:14:33.722524Z",
+    "sender": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+    "recipient": "cfo@enterprise.com",
+    "recipient_group": "Executive",
+    "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=softfail dkim=none dmarc=none\nFrom: \"Microsoft Office 365 Support\" <no-reply@security-office365-updates.com>\nTo: <cfo@enterprise.com>\nSubject: ACTION REQUIRED: Unusual Sign-in Detected for Security Alert\nDate: Sat, 23 May 2026 15:20:00 +0000\n\nYour Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+      "from": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+      "from_display_name": "Microsoft Office 365 Support",
+      "from_email": "no-reply@security-office365-updates.com",
+      "to": "cfo@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Sat, 23 May 2026 15:20:00 +0000",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "softfail",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Your Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+      "urls": [
+        "http://microsoft.com-update.security-checkpoint.xyz/login.php"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.706,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.417,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.417
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 1.0,
+      "average_score": 1.0,
+      "details": [
+        {
+          "url": "http://microsoft.com-update.security-checkpoint.xyz/login.php",
+          "domain": "security-checkpoint.xyz",
+          "score": 1.0,
+          "indicators": [
+            "ssl_certificate_missing_or_invalid",
+            "spoofing_microsoft_lookalike",
+            "redirect_shortener_used",
+            "hyphenated_domain"
+          ],
+          "ssl_valid": false,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Authentication Fail": 0.12,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Display Name Impersonation": 0.25,
+        "Semantic Body Threat Cues": 0.353,
+        "Embedded Links Risk Score": 0.4
+      },
+      "explanations": [
+        "SPF record verification returned softfail",
+        "Sender name 'Microsoft Office 365 Support' mimics authority but uses external domain 'security-office365-updates.com'",
+        "Body semantics contain credential harvesting request indicators",
+        "Embedded link domain 'security-checkpoint.xyz' lacks valid SSL certificate",
+        "Contains link typosquatting mimicking a trusted domain: security-checkpoint.xyz",
+        "Redirect or URL shortener link detected to bypass inspection"
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
+    "id": "alert_1781532873_91",
+    "timestamp": "2026-06-15T14:14:33.693808Z",
+    "sender": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+    "recipient": "cfo@enterprise.com",
+    "recipient_group": "Executive",
+    "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=softfail dkim=none dmarc=none\nFrom: \"Microsoft Office 365 Support\" <no-reply@security-office365-updates.com>\nTo: <cfo@enterprise.com>\nSubject: ACTION REQUIRED: Unusual Sign-in Detected for Security Alert\nDate: Sat, 23 May 2026 15:20:00 +0000\n\nYour Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+      "from": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+      "from_display_name": "Microsoft Office 365 Support",
+      "from_email": "no-reply@security-office365-updates.com",
+      "to": "cfo@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Sat, 23 May 2026 15:20:00 +0000",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "softfail",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Your Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+      "urls": [
+        "http://microsoft.com-update.security-checkpoint.xyz/login.php"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.706,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.417,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.417
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 1.0,
+      "average_score": 1.0,
+      "details": [
+        {
+          "url": "http://microsoft.com-update.security-checkpoint.xyz/login.php",
+          "domain": "security-checkpoint.xyz",
+          "score": 1.0,
+          "indicators": [
+            "ssl_certificate_missing_or_invalid",
+            "spoofing_microsoft_lookalike",
+            "redirect_shortener_used",
+            "hyphenated_domain"
+          ],
+          "ssl_valid": false,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Authentication Fail": 0.12,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Display Name Impersonation": 0.25,
+        "Semantic Body Threat Cues": 0.353,
+        "Embedded Links Risk Score": 0.4
+      },
+      "explanations": [
+        "SPF record verification returned softfail",
+        "Sender name 'Microsoft Office 365 Support' mimics authority but uses external domain 'security-office365-updates.com'",
+        "Body semantics contain credential harvesting request indicators",
+        "Embedded link domain 'security-checkpoint.xyz' lacks valid SSL certificate",
+        "Contains link typosquatting mimicking a trusted domain: security-checkpoint.xyz",
+        "Redirect or URL shortener link detected to bypass inspection"
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
+    "id": "alert_1781532873_90",
+    "timestamp": "2026-06-15T14:14:33.673786Z",
+    "sender": "Sarah Jenkins <sjenkins@enterprise.com>",
+    "recipient": "marketing-team@enterprise.com",
+    "recipient_group": "General Employee",
+    "subject": "Q3 Marketing Strategy Sync",
+    "verdict": "benign",
+    "threat_category": "benign",
+    "confidence_score": 0.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=pass dkim=pass dmarc=pass\nFrom: \"Sarah Jenkins\" <sjenkins@enterprise.com>\nTo: <marketing-team@enterprise.com>\nSubject: Q3 Marketing Strategy Sync\nDate: Fri, 22 May 2026 19:27:34 +0000\n\nHi team,\n\nI've updated the slide deck for our Q3 planning session.\nHere is the project dashboard: https://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "Q3 Marketing Strategy Sync",
+      "from": "Sarah Jenkins <sjenkins@enterprise.com>",
+      "from_display_name": "Sarah Jenkins",
+      "from_email": "sjenkins@enterprise.com",
+      "to": "marketing-team@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Fri, 22 May 2026 19:27:34 +0000",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "pass",
+      "dkim_status": "pass",
+      "dmarc_status": "pass",
+      "body_text": "Hi team,\n\nI've updated the slide deck for our Q3 planning session.\nHere is the project dashboard: https://internal.enterprise.com/marketing/q3-sync\n\nBest,\nSarah",
+      "urls": [
+        "https://internal.enterprise.com/marketing/q3-sync"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.0,
+      "intent": "benign",
+      "categories": {
+        "credential_harvesting": 0.0,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": []
+    },
+    "url_analysis": {
+      "max_score": 0.0,
+      "average_score": 0.0,
+      "details": [
+        {
+          "url": "https://internal.enterprise.com/marketing/q3-sync",
+          "domain": "enterprise.com",
+          "score": 0.0,
+          "indicators": [],
+          "ssl_valid": true,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "benign",
+      "threat_category": "benign",
+      "confidence_score": 0.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Check Passed": -0.08,
+        "DKIM Signature Valid": -0.06,
+        "DMARC Policy Pass": -0.1
+      },
+      "explanations": [
+        "No suspicious headers, language patterns, or URL risks detected."
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": null
+  },
+  {
+    "id": "alert_1781532873_89",
+    "timestamp": "2026-06-15T14:14:33.655485Z",
+    "sender": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+    "recipient": "cfo@enterprise.com",
+    "recipient_group": "Executive",
+    "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+    "verdict": "phishing",
+    "threat_category": "credential_harvesting",
+    "confidence_score": 1.0,
+    "raw_email": "Authentication-Results: mx.google.com; spf=softfail dkim=none dmarc=none\nFrom: \"Microsoft Office 365 Support\" <no-reply@security-office365-updates.com>\nTo: <cfo@enterprise.com>\nSubject: ACTION REQUIRED: Unusual Sign-in Detected for Security Alert\nDate: Sat, 23 May 2026 15:20:00 +0000\n\nYour Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+    "parsed_details": {
+      "parsed": true,
+      "subject": "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert",
+      "from": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",
+      "from_display_name": "Microsoft Office 365 Support",
+      "from_email": "no-reply@security-office365-updates.com",
+      "to": "cfo@enterprise.com",
+      "reply_to": "",
+      "reply_to_mismatch": false,
+      "date": "Sat, 23 May 2026 15:20:00 +0000",
+      "message_id": "",
+      "hop_count": 0,
+      "spf_status": "softfail",
+      "dkim_status": "none",
+      "dmarc_status": "none",
+      "body_text": "Your Microsoft Office 365 account has experienced an unusual sign-in attempt from Russia.\nTo prevent lockout and permanent deletion of your account, you must verify your identity immediately.\nPlease update your password here: http://microsoft.com-update.security-checkpoint.xyz/login.php\n\nMicrosoft Security Team",
+      "urls": [
+        "http://microsoft.com-update.security-checkpoint.xyz/login.php"
+      ],
+      "attachments": []
+    },
+    "nlp_analysis": {
+      "score": 0.706,
+      "intent": "credential_harvesting",
+      "categories": {
+        "credential_harvesting": 0.417,
+        "bec": 0.0,
+        "generic_phishing": 0.0
+      },
+      "linguistic_signals": [
+        {
+          "signal": "credential_harvesting_intent",
+          "weight": 0.417
+        }
+      ]
+    },
+    "url_analysis": {
+      "max_score": 1.0,
+      "average_score": 1.0,
+      "details": [
+        {
+          "url": "http://microsoft.com-update.security-checkpoint.xyz/login.php",
+          "domain": "security-checkpoint.xyz",
+          "score": 1.0,
+          "indicators": [
+            "ssl_certificate_missing_or_invalid",
+            "spoofing_microsoft_lookalike",
+            "redirect_shortener_used",
+            "hyphenated_domain"
+          ],
+          "ssl_valid": false,
+          "domain_age_days": 450
+        }
+      ]
+    },
+    "fusion_result": {
+      "verdict": "phishing",
+      "threat_category": "credential_harvesting",
+      "confidence_score": 1.0,
+      "base_value": 0.1,
+      "shap_contributions": {
+        "SPF Authentication Fail": 0.12,
+        "DKIM Missing Signature": 0.08,
+        "DMARC Policy Missing": 0.12,
+        "Display Name Impersonation": 0.25,
+        "Semantic Body Threat Cues": 0.353,
+        "Embedded Links Risk Score": 0.4
+      },
+      "explanations": [
+        "SPF record verification returned softfail",
+        "Sender name 'Microsoft Office 365 Support' mimics authority but uses external domain 'security-office365-updates.com'",
+        "Body semantics contain credential harvesting request indicators",
+        "Embedded link domain 'security-checkpoint.xyz' lacks valid SSL certificate",
+        "Contains link typosquatting mimicking a trusted domain: security-checkpoint.xyz",
+        "Redirect or URL shortener link detected to bypass inspection"
+      ]
+    },
+    "analyst_action": "pending",
+    "analyst_notes": "",
+    "campaign_id": "camp_m365_harvest_02"
+  },
+  {
     "id": "alert_1781531442_88",
     "timestamp": "2026-06-15T13:50:42.135043Z",
     "sender": "Microsoft Office 365 Support <no-reply@security-office365-updates.com>",

@@ -7,13 +7,13 @@ export default defineConfig({
   define: {
     // Fallback to localhost for local development
     'import.meta.env.VITE_API_URL': JSON.stringify(
-      process.env.VITE_API_URL || 'http://localhost:8000'
+      process.env.VITE_API_URL || 'http://127.0.0.1:8000'
     ),
   },
   server: {
     proxy: {
       '/api': {
-        target: process.env.VITE_API_URL || 'http://localhost:8000',
+        target: process.env.VITE_API_URL || 'http://127.0.0.1:8000',
         changeOrigin: true,
       },
     },

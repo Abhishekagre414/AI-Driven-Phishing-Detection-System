@@ -9,10 +9,10 @@ from collections import defaultdict
 from datetime import datetime, timezone
 
 # Import APDS scoring engine components
-from api.email_parser import EmailParser
-from api.nlp_analyzer import NLPAnalyzer
-from api.url_scorer import URLScorer
-from api.fusion_engine import FusionEngine
+from security.email_parser import EmailParser
+from ml.nlp_analyzer import NLPAnalyzer
+from security.url_scorer import URLScorer
+from ml.fusion_engine import FusionEngine
 
 app = FastAPI(title="APDS API", version="2.0.0")
 

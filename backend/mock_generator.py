@@ -7,7 +7,7 @@ Usage
 -----
     python -m api.mock_generator           # seeds alerts_db.json with 30 alerts
 
-    from api.mock_generator import MockEmailGenerator
+    from backend.mock_generator import MockEmailGenerator
     raw = MockEmailGenerator.construct_rfc2822(template, date_str)
     alerts = MockEmailGenerator.generate_alerts_database(count=30)
 
@@ -26,10 +26,10 @@ import random
 from datetime import datetime, timedelta, timezone
 from typing import Dict, Any, List
 
-from api.email_parser import EmailParser
-from api.nlp_analyzer import NLPAnalyzer
-from api.url_scorer    import URLScorer
-from api.fusion_engine import FusionEngine
+from security.email_parser import EmailParser
+from ml.nlp_analyzer import NLPAnalyzer
+from security.url_scorer import URLScorer
+from ml.fusion_engine import FusionEngine
 
 # ── Email templates ─────────────────────────────────────────────────────────
 # Each template is a dict that MockEmailGenerator.construct_rfc2822() turns

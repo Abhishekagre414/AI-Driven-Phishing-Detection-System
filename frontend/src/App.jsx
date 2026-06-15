@@ -26,7 +26,7 @@ import {
 import AlertDetails from './components/AlertDetails';
 import { mockAlerts } from './mock_data';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = '';
 
 // Compute campaigns if working offline
 function deriveCampaignsOffline(alertList) {
@@ -118,8 +118,8 @@ export default function App() {
   const loadData = async () => {
     setLoading(true);
     try {
-      // 1. Ping root to verify API connectivity
-      const rootRes = await fetch(`${API_BASE_URL}/`).catch(() => null);
+      // 1. Ping an API endpoint to verify API connectivity
+      const rootRes = await fetch(`${API_BASE_URL}/api/v1/settings/thresholds`).catch(() => null);
       if (rootRes && rootRes.ok) {
         setApiOnline(true);
 

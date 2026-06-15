@@ -8,7 +8,7 @@ from datetime import datetime
 from email.policy import default
 
 # We import the scoring logic directly from main.py
-from api.main import score_email_v1, ScorePayload
+from backend.main import score_email_v1, ScorePayload
 
 def load_env():
     env_path = os.path.join(os.path.dirname(__file__), ".env")
