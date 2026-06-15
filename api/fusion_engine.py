@@ -179,17 +179,24 @@ class FusionEngine:
         free_domains     = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com",
                              "protonmail.com", "aol.com", "icloud.com"]
 
+        recipient_domain = ""
+        to_header = parsed_email.get("to", "")
+        if "@" in to_header:
+            recipient_domain = to_header.split("@")[-1].split(">")[0].strip().lower()
+
+        sender_domain = from_email.split("@")[-1].lower() if "@" in from_email else ""
+
         if (from_display_name
                 and "@" in from_email
                 and any(term in from_display_name.lower() for term in high_value_terms)
-                and (from_email.split("@")[-1].lower() not in ["microsoft.com", "google.com"]
+                and (sender_domain not in ["microsoft.com", "google.com", recipient_domain]
                      or any(free in from_email.lower() for free in free_domains))):
             val = 0.25
             shap_contributions["Display Name Impersonation"] = val
             explanations.append(
                 "Sender name '" + from_display_name
                 + "' mimics authority but uses external domain '"
-                + from_email.split("@")[-1] + "'"
+                + sender_domain + "'"
             )
             header_score += val
 

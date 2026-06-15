@@ -38,8 +38,8 @@ import tldextract
 TARGET_BRANDS: tuple = (
     "microsoft", "google", "outlook", "office365", "paypal",
     "netflix",   "apple",  "amazon",  "facebook",  "chase",
-    "wellsfargo","bankofamerica","docusign","dropbox","onedrive",
-    "sharepoint","adobe",
+    "wellsfargo", "bankofamerica", "docusign", "dropbox", "onedrive",
+    "sharepoint", "adobe", "dhl", "fedex", "usps",
 )
 
 # ── Known URL shortener / redirect domains ────────────────────────────────────
@@ -70,7 +70,7 @@ class URLScorer:
         for char in text:
             frequencies[char] = frequencies.get(char, 0) + 1
         for freq in frequencies.values():
-            prob     = freq / text_len
+            prob = freq / text_len
             entropy -= prob * math.log2(prob)
         return round(entropy, 3)
 
@@ -88,9 +88,9 @@ class URLScorer:
              domain name and a known brand (e.g. "micosoft").
         """
         domain_lower = domain.lower()
-        extracted    = tldextract.extract(domain_lower)
-        subdomain    = extracted.subdomain
-        domain_name  = extracted.domain   # registrable part, without TLD
+        extracted = tldextract.extract(domain_lower)
+        subdomain = extracted.subdomain
+        domain_name = extracted.domain   # registrable part, without TLD
 
         for brand in TARGET_BRANDS:
             # Strategy 1: brand in subdomain of a non-brand domain
@@ -124,9 +124,9 @@ class URLScorer:
         for i, c1 in enumerate(s1):
             current_row = [i + 1]
             for j, c2 in enumerate(s2):
-                insertions    = previous_row[j + 1] + 1
-                deletions     = current_row[j]      + 1
-                substitutions = previous_row[j]     + (c1 != c2)
+                insertions = previous_row[j + 1] + 1
+                deletions = current_row[j] + 1
+                substitutions = previous_row[j] + (c1 != c2)
                 current_row.append(min(insertions, deletions, substitutions))
             previous_row = current_row
 
@@ -146,19 +146,17 @@ class URLScorer:
           domain_age_days – int (simulated)
         """
         indicators: List[str] = []
-        score:      float     = 0.0
+        score = 0.0
         url_lower = url.lower()
 
         # Extract domain components via tldextract
-        extracted   = tldextract.extract(url_lower)
-        domain      = extracted.domain + ("." + extracted.suffix if extracted.suffix else "")
-        is_shortener = False
+        extracted = tldextract.extract(url_lower)
+        domain = extracted.domain + ("." + extracted.suffix if extracted.suffix else "")
 
         # ── Check 1: URL shortener / redirect service ─────────────────────
         for short in SHORTENERS:
             if short in url_lower:
-                score      += 0.40
-                is_shortener = True
+                score += 0.40
                 indicators.append("redirect_shortener_used")
                 break
 
@@ -203,7 +201,11 @@ class URLScorer:
         # In a production system these would come from live certificate checks
         # and WHOIS / passive DNS lookups.  For the dashboard demo we use
         # fixed plausible defaults.
-        ssl_valid      = True     # assume SSL unless URL starts with plain http
+        ssl_valid = True
+        if url_lower.startswith("http://"):
+            ssl_valid = False
+            score += 0.25
+            indicators.append("ssl_certificate_missing_or_invalid")
         domain_age_days = 450     # ~15 months — "relatively new" domain
 
         final_score = round(min(score, 1.0), 3)
@@ -230,7 +232,7 @@ class URLScorer:
         details = [cls.score_url(url) for url in urls]
 
         scores = [d["score"] for d in details]
-        max_score     = round(max(scores,    default=0.0), 3)
+        max_score = round(max(scores, default=0.0), 3)
         average_score = round(sum(scores) / len(scores), 3) if scores else 0.0
 
         return {

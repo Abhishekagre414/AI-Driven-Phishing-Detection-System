@@ -2,7 +2,7 @@ import email
 from email import policy
 import re
 from bs4 import BeautifulSoup
-from typing import Dict, List, Any
+from typing import Dict, Any
 
 # Regex to capture URLs
 URL_REGEX = re.compile(
@@ -141,23 +141,29 @@ class EmailParser:
                     # Text payload
                     if content_type == "text/plain":
                         try:
-                            body_text += part.get_payload(decode=True).decode(errors="ignore")
+                            payload = part.get_payload(decode=True)
+                            if isinstance(payload, bytes):
+                                body_text += payload.decode(errors="ignore")
                         except Exception:
                             pass
                     elif content_type == "text/html":
                         try:
-                            html_body += part.get_payload(decode=True).decode(errors="ignore")
+                            payload = part.get_payload(decode=True)
+                            if isinstance(payload, bytes):
+                                html_body += payload.decode(errors="ignore")
                         except Exception:
                             pass
         else:
             # Single part message
             content_type = msg.get_content_type()
             try:
-                payload = msg.get_payload(decode=True).decode(errors="ignore")
-                if content_type == "text/html":
-                    html_body = payload
-                else:
-                    body_text = payload
+                payload = msg.get_payload(decode=True)
+                if isinstance(payload, bytes):
+                    payload_str = payload.decode(errors="ignore")
+                    if content_type == "text/html":
+                        html_body = payload_str
+                    else:
+                        body_text = payload_str
             except Exception:
                 pass
 
@@ -171,7 +177,11 @@ class EmailParser:
 
             # Extract URLs from href attributes in HTML
             for a in soup.find_all("a", href=True):
-                url = a["href"].strip()
+                href_val = a["href"]
+                if isinstance(href_val, list):
+                    url = " ".join(href_val).strip()
+                else:
+                    url = str(href_val).strip()
                 if url and not url.startswith(("mailto:", "tel:", "#")):
                     urls.append(url)
 

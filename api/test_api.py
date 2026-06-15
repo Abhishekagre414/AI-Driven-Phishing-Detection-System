@@ -2,7 +2,7 @@ import urllib.request
 import urllib.parse
 import json
 import sys
-import time
+from typing import Optional
 
 API_URL = "http://localhost:8000"
 
@@ -21,7 +21,7 @@ MOCK_EMAIL = (
     "Microsoft Security Team"
 )
 
-def make_request(path: str, data: dict = None, method: str = "GET"):
+def make_request(path: str, data: Optional[dict] = None, method: str = "GET"):
     url = f"{API_URL}{path}"
     headers = {"Content-Type": "application/json"}
     
@@ -73,7 +73,7 @@ def run_tests():
         confidence = fusion["confidence_score"]
         explanations = fusion["explanations"]
         
-        print(f"[PASS] Scoring API returned successfully.")
+        print("[PASS] Scoring API returned successfully.")
         print(f"       Verdict: {verdict.upper()} (Confidence: {confidence})")
         print(f"       Category: {score_res['threat_category']}")
         print(f"       Explanations count: {len(explanations)}")

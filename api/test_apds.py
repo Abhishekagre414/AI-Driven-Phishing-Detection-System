@@ -18,8 +18,6 @@ Test modules
   TestAPDSEndpoints    – integration tests for all API endpoints
 """
 
-import json
-import pytest
 from fastapi.testclient import TestClient
 
 # ── Import application and components ──────────────────────────────────────
@@ -59,7 +57,7 @@ BENIGN_EMAIL_RAW = (
     "\n"
     "Hi team,\n\n"
     "I've updated the slide deck for our Q3 planning session.\n"
-    "Here is the project dashboard: http://internal.enterprise.com/marketing/q3-sync\n\n"
+    "Here is the project dashboard: https://internal.enterprise.com/marketing/q3-sync\n\n"
     "Best,\nSarah"
 )
 
@@ -186,7 +184,7 @@ class TestURLScorer:
 
     def test_legitimate_internal_url(self):
         """A clean internal URL must score zero."""
-        result = URLScorer.score_url("http://internal.enterprise.com/marketing/q3-sync")
+        result = URLScorer.score_url("https://internal.enterprise.com/marketing/q3-sync")
         assert result["score"] == 0.0
 
     def test_ip_address_url(self):
@@ -199,7 +197,7 @@ class TestURLScorer:
         """evaluate_urls must return correct max and average."""
         urls = [
             "https://bit.ly/phish",                               # ~0.40
-            "http://internal.enterprise.com/marketing/q3-sync",   # 0.00
+            "https://internal.enterprise.com/marketing/q3-sync",  # 0.00
         ]
         result = URLScorer.evaluate_urls(urls)
         assert result["max_score"] >= 0.40
@@ -209,9 +207,9 @@ class TestURLScorer:
     def test_evaluate_urls_empty_list(self):
         """evaluate_urls with empty list must return zeros."""
         result = URLScorer.evaluate_urls([])
-        assert result["max_score"]     == 0.0
+        assert result["max_score"] == 0.0
         assert result["average_score"] == 0.0
-        assert result["details"]       == []
+        assert result["details"] == []
 
     def test_score_capped_at_one(self):
         """Score must never exceed 1.0 regardless of indicator count."""
@@ -282,10 +280,10 @@ class TestFusionEngine:
     def test_phishing_email_verdict(self):
         """A fully-loaded phishing email must receive a phishing verdict."""
         parsed = EmailParser.parse_raw_email(PHISHING_EMAIL_RAW)
-        body   = parsed.get("body_text", "")
-        urls   = parsed.get("urls", [])
-        nlp    = NLPAnalyzer.analyze_text(body)
-        url_r  = URLScorer.evaluate_urls(urls)
+        body = parsed.get("body_text", "")
+        urls = parsed.get("urls", [])
+        nlp = NLPAnalyzer.analyze_text(body)
+        url_r = URLScorer.evaluate_urls(urls)
         result = FusionEngine.fuse_verdict(parsed, nlp, url_r)
 
         assert result["verdict"] == "phishing", (
@@ -359,7 +357,7 @@ class TestEmailParser:
         result = EmailParser.parse_raw_email(PHISHING_EMAIL_RAW)
 
         assert result["parsed"] is True
-        assert result["spf_status"]  == "softfail"
+        assert result["spf_status"] == "softfail"
         assert result["dkim_status"] == "none"
         assert result["dmarc_status"] == "none"
         assert result["subject"] == "ACTION REQUIRED: Unusual Sign-in Detected for Security Alert"
@@ -371,8 +369,8 @@ class TestEmailParser:
         result = EmailParser.parse_raw_email(BENIGN_EMAIL_RAW)
 
         assert result["parsed"] is True
-        assert result["spf_status"]   == "pass"
-        assert result["dkim_status"]  == "pass"
+        assert result["spf_status"] == "pass"
+        assert result["dkim_status"] == "pass"
         assert result["dmarc_status"] == "pass"
 
     def test_reply_to_mismatch_detected(self):
@@ -440,7 +438,7 @@ class TestAPDSEndpoints:
         r = client.get("/alerts")
         assert r.status_code == 200
         data = r.json()
-        assert "total"  in data
+        assert "total" in data
         assert "alerts" in data
 
     def test_get_alerts_filter_by_verdict(self):
@@ -460,7 +458,7 @@ class TestAPDSEndpoints:
             match = (
                 "urgent" in alert.get("subject",   "").lower()
                 or "urgent" in alert.get("sender",  "").lower()
-                or "urgent" in alert.get("recipient","").lower()
+                or "urgent" in alert.get("recipient", "").lower()
             )
             assert match
 
@@ -568,11 +566,11 @@ class TestAPDSEndpoints:
         r = client.post("/api/v1/score", json=payload)
         assert r.status_code == 200
         data = r.json()
-        assert "fusion_result"    in data
-        assert "threat_category"  in data
-        assert "alert"            in data
+        assert "fusion_result" in data
+        assert "threat_category" in data
+        assert "alert" in data
         assert "confidence_score" in data["fusion_result"]
-        assert "explanations"     in data["fusion_result"]
+        assert "explanations" in data["fusion_result"]
 
     def test_score_v1_explanations_nonempty(self):
         """Phishing score must include at least one explanation string."""
@@ -605,8 +603,8 @@ class TestAPDSEndpoints:
         r = client.post("/score", json=payload)
         assert r.status_code == 200
         data = r.json()
-        assert "verdict"     in data
-        assert "confidence"  in data
+        assert "verdict" in data
+        assert "confidence" in data
         assert "explanations" in data
 
     # ── Model Metrics ─────────────────────────────────────────────────────────

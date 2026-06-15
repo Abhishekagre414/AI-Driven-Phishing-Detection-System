@@ -1,10 +1,12 @@
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import Optional, List, Dict, Any
-import json, os, re
+from typing import Optional
+import json
+import os
+import threading
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 
 # Import APDS scoring engine components
 from api.email_parser import EmailParser
@@ -22,14 +24,17 @@ app.add_middleware(
 )
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "alerts_db.json")
+db_lock = threading.RLock()
 
 def load_db():
-    with open(DB_PATH, encoding="utf-8") as f:
-        return json.load(f)
+    with db_lock:
+        with open(DB_PATH, encoding="utf-8") as f:
+            return json.load(f)
 
 def save_db(data):
-    with open(DB_PATH, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
+    with db_lock:
+        with open(DB_PATH, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2)
 
 # Campaign metadata maps
 CAMP_NAMES = {
@@ -109,14 +114,15 @@ class FeedbackPayload(BaseModel):
 
 @app.post("/api/v1/alerts/{alert_id}/feedback")
 def alert_feedback_v1(alert_id: str, payload: FeedbackPayload):
-    db = load_db()
-    alerts = db if isinstance(db, list) else db.get("alerts", [])
-    for a in alerts:
-        if a["id"] == alert_id:
-            a["analyst_action"] = payload.action
-            a["analyst_notes"] = payload.notes or ""
-            save_db(alerts if isinstance(db, list) else {**db, "alerts": alerts})
-            return {"status": "success", "alert": a}
+    with db_lock:
+        db = load_db()
+        alerts = db if isinstance(db, list) else db.get("alerts", [])
+        for a in alerts:
+            if a["id"] == alert_id:
+                a["analyst_action"] = payload.action
+                a["analyst_notes"] = payload.notes or ""
+                save_db(alerts if isinstance(db, list) else {**db, "alerts": alerts})
+                return {"status": "success", "alert": a}
     raise HTTPException(status_code=404, detail="Alert not found")
 
 class ScorePayload(BaseModel):
@@ -135,43 +141,44 @@ def score_email_v1(payload: ScorePayload):
     
     fusion = FusionEngine.fuse_verdict(parsed, nlp_res, url_res)
     
-    db = load_db()
-    alerts = db if isinstance(db, list) else db.get("alerts", [])
-    
-    category = fusion.get("threat_category", "benign")
-    campaign_id = None
-    if category == "bec":
-        campaign_id = "camp_bec_wire_01"
-    elif category == "credential_harvesting":
-        campaign_id = "camp_m365_harvest_02"
-    elif category == "generic_phishing":
-        campaign_id = "camp_dhl_delivery_03"
+    with db_lock:
+        db = load_db()
+        alerts = db if isinstance(db, list) else db.get("alerts", [])
         
-    alert_id = f"alert_{int(datetime.utcnow().timestamp())}_{len(alerts)}"
-    
-    new_alert = {
-        "id": alert_id,
-        "timestamp": datetime.utcnow().isoformat() + "Z",
-        "sender": parsed.get("from", ""),
-        "recipient": payload.recipient,
-        "recipient_group": payload.recipient_group,
-        "subject": parsed.get("subject", ""),
-        "verdict": fusion.get("verdict", "benign"),
-        "threat_category": category,
-        "confidence_score": fusion.get("confidence_score", 0.0),
-        "raw_email": payload.raw_email,
-        "parsed_details": parsed,
-        "nlp_analysis": nlp_res,
-        "url_analysis": url_res,
-        "fusion_result": fusion,
-        "analyst_action": "pending",
-        "analyst_notes": "",
-        "campaign_id": campaign_id
-    }
-    
-    alerts.insert(0, new_alert)
-    save_db(alerts if isinstance(db, list) else {**db, "alerts": alerts})
-    
+        category = fusion.get("threat_category", "benign")
+        campaign_id = None
+        if category == "bec":
+            campaign_id = "camp_bec_wire_01"
+        elif category == "credential_harvesting":
+            campaign_id = "camp_m365_harvest_02"
+        elif category == "generic_phishing":
+            campaign_id = "camp_dhl_delivery_03"
+            
+        alert_id = f"alert_{int(datetime.now(timezone.utc).timestamp())}_{len(alerts)}"
+        
+        new_alert = {
+            "id": alert_id,
+            "timestamp": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+            "sender": parsed.get("from", ""),
+            "recipient": payload.recipient,
+            "recipient_group": payload.recipient_group,
+            "subject": parsed.get("subject", ""),
+            "verdict": fusion.get("verdict", "benign"),
+            "threat_category": category,
+            "confidence_score": fusion.get("confidence_score", 0.0),
+            "raw_email": payload.raw_email,
+            "parsed_details": parsed,
+            "nlp_analysis": nlp_res,
+            "url_analysis": url_res,
+            "fusion_result": fusion,
+            "analyst_action": "pending",
+            "analyst_notes": "",
+            "campaign_id": campaign_id
+        }
+        
+        alerts.insert(0, new_alert)
+        save_db(alerts if isinstance(db, list) else {**db, "alerts": alerts})
+        
     return {
         "fusion_result": fusion,
         "threat_category": category,
@@ -247,14 +254,15 @@ class AnalystUpdate(BaseModel):
 
 @app.patch("/alerts/{alert_id}/action")
 def update_alert_action(alert_id: str, body: AnalystUpdate):
-    db = load_db()
-    alerts = db if isinstance(db, list) else db.get("alerts", [])
-    for a in alerts:
-        if a["id"] == alert_id:
-            a["analyst_action"] = body.action
-            a["analyst_notes"] = body.notes or ""
-            save_db(alerts if isinstance(db, list) else {**db, "alerts": alerts})
-            return {"ok": True, "alert": a}
+    with db_lock:
+        db = load_db()
+        alerts = db if isinstance(db, list) else db.get("alerts", [])
+        for a in alerts:
+            if a["id"] == alert_id:
+                a["analyst_action"] = body.action
+                a["analyst_notes"] = body.notes or ""
+                save_db(alerts if isinstance(db, list) else {**db, "alerts": alerts})
+                return {"ok": True, "alert": a}
     raise HTTPException(status_code=404, detail="Alert not found")
 
 @app.get("/stats")

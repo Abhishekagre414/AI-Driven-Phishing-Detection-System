@@ -23,7 +23,7 @@ categories recognised by the APDS scoring engine:
 import json
 import os
 import random
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Dict, Any, List
 
 from api.email_parser import EmailParser
@@ -264,13 +264,7 @@ class MockEmailGenerator:
             "credential_harvesting": "camp_m365_harvest_02",
             "generic_phishing":     "camp_dhl_delivery_03",
         }
-        CAMPAIGN_NAMES = {
-            "camp_bec_wire_01":      "Executive Impersonation (Wire Transfer)",
-            "camp_m365_harvest_02":  "Office 365 Credential Harvesting (Moscow IP)",
-            "camp_dhl_delivery_03":  "DHL / FedEx Customs Delivery Scam",
-        }
-
-        base_time = datetime.utcnow()
+        base_time = datetime.now(timezone.utc)
         alerts:    List[Dict[str, Any]] = []
 
         for i in range(count):
